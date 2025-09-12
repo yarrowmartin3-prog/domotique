@@ -1,64 +1,15 @@
-
-.banner {
-  background: linear-gradient(90deg, #3b82f6, #22c55e);
-  color: #fff;
-  text-align: center;
-  padding: 8px 12px;
-  font-size: 14px;
-  font-weight: 600;
-}/* Pro theme add-on */
-:root {
-  --radius: 18px;
-  --shadow: 0 6px 24px rgba(0,0,0,.08);
-  --accent: #3b82f6; /* changeable */
-}
-.header-gradient { background: linear-gradient(135deg, var(--accent), #22c55e); color:#fff; }
-.header-gradient .subtitle a, .header-gradient .subtitle button { background: rgba(255,255,255,.15); border-color: transparent; color:#fff; }
-.card { border: 1px solid rgba(0,0,0,.06); box-shadow: var(--shadow); }
-.card .title { font-weight: 700; letter-spacing:.1px; }
-.badge { display:inline-block; padding:2px 8px; border-radius:999px; border:1px solid #e5e7eb; font-size:12px; margin-left:8px; }
-.dark .badge { border-color:#2a3140; }
-.sticky-toolbar { position: sticky; top: 0; background: var(--bg); padding: 8px 16px; z-index: 5; backdrop-filter: blur(6px); border-bottom:1px solid #eee; }
-.share-buttons {
-  margin-top: 8px;
-  font-size: 13px;
-}
-.share-buttons a,
-.share-buttons button {
-  margin-right: 8px;
-  color: var(--accent);
-  background: none;
-  border: none;
-  cursor: pointer;
-  font-weight: 600;
-  text-decoration: none;
-}
-.share-buttons a:hover,
-.share-buttons button:hover {
-  text-decoration: underline;
-}
-/* Top nav (si utilisée) */
-.topnav{ display:flex; align-items:center; gap:12px; padding:10px 16px; border-bottom:1px solid #eee; background:#fff; position:sticky; top:0; z-index:9; }
-.topnav .brand{ font-weight:800; text-decoration:none; color:#111; }
-.topnav .spacer{ flex:1; }
-.topnav .navlink{ text-decoration:none; color:#444; padding:6px 10px; border-radius:8px; }
-.topnav .navlink:hover{ background:#f3f5f8; }
-.dark .topnav{ background:#0f1115; border-color:#1f2431; }
-.dark .topnav .brand{ color:#e9eef7; }
-.dark .topnav .navlink{ color:#cfd6e6; }
-.dark .topnav .navlink:hover{ background:#151924; }
-
-/* Bandeau déjà ajouté plus tôt
-.banner{ background:linear-gradient(90deg,#3b82f6,#22c55e); color:#fff; text-align:center; padding:8px 12px; font-size:14px; font-weight:600; } */
-
-/* Cartes cliquables (si la liste ouvre post.html?id=...) */
-.card.clickable { cursor:pointer; transition:transform .06s ease, box-shadow .12s ease; }
-.card.clickable:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.09); }
-
-/* Boutons de partage (liste & article) */
-.share-buttons { margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap; }
-.share-btn { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; border:1px solid #e5e7eb; background:#fff; color:var(--accent); font-size:13px; font-weight:600; cursor:pointer; text-decoration:none; }
-.share-btn svg{ display:block; }
-.share-btn:hover{ background:#f5f8ff; }
-.dark .share-btn{ background:#0f1115; border-color:#2a3140; color:var(--accent); }
-.dark .share-btn:hover{ background:#151924; }
+.muted{color:#666;padding:16px}
+.error{color:#b00;padding:16px}
+.header-gradient{background:linear-gradient(90deg,#eef4ff,#f7fbff)}
+.sticky-toolbar{position:sticky;top:0;z-index:5;background:var(--bg,#fff);padding:12px 16px}
+.card.clickable{cursor:pointer}
+.btn-read{display:inline-block;margin-top:8px;padding:8px 12px;border-radius:10px;border:1px solid #e5e7eb;text-decoration:none;font-weight:700;font-size:14px;color:#111;background:#fff}
+.btn-read:hover{background:#f5f8ff}
+.post-container{max-width:860px;margin:24px auto;padding:0 16px}
+.post h1{font-size:2rem;margin:.2em 0}
+.post-meta{color:#666;margin:.2em 0 1em}
+.post-hero{width:100%;border-radius:14px;margin:8px 0 16px}
+.post-body p{line-height:1.7;margin:.8em 0}
+.post-links a{display:inline-block;margin:6px 8px 0 0}
+.dark .btn-read{color:#e9eef7;background:#0f1115;border-color:#2a3140}
+.dark .btn-read:hover{background:#151924}
