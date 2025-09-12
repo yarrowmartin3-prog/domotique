@@ -51,4 +51,75 @@ function smartwatchList(lang="fr"){
 }
 function thermostatPost(lang="fr"){
   const L = lang==="fr";
-  const title = L ? "Nest vs Ecobee : quel
+  const title = L ? "Nest vs Ecobee : quel thermostat intelligent en 2025 ?"
+                  : "Nest vs Ecobee: Which Smart Thermostat in 2025?";
+  const id = idOf(title, lang);
+  return {
+    id, title, date: today(), tags:["thermostat","énergie","hvac"],
+    image: `https://source.unsplash.com/1280x720/?smart%20thermostat&sig=${id}`,
+    summary: L ? "Compatibilité, capteurs, économies."
+               : "Compatibility, sensors, savings.",
+    body: L ? "**Aperçu** — Matter, capteurs, économies.\n"
+            : "**Overview** — Matter, sensors, savings.\n",
+    links: [
+      {label:"Amazon", url: withTag("https://www.amazon.ca/s?k=ecobee+smart+thermostat")},
+      {label:"Amazon", url: withTag("https://www.amazon.ca/s?k=nest+learning+thermostat")}
+    ]
+  };
+}
+function samsungTvPost(lang="fr"){
+  const L = lang==="fr";
+  const title = L ? "Samsung Smart TV 2025 — la meilleure pour SmartThings ?"
+                  : "Samsung Smart TV 2025 — Best for SmartThings?";
+  const id = idOf(title, lang);
+  return {
+    id, title, date: today(), tags:["tv","samsung","smartthings"],
+    image: `https://source.unsplash.com/1280x720/?samsung%20tv%20living%20room&sig=${id}`,
+    summary: L ? "QLED/Neo QLED conseillés pour salon lumineux."
+               : "QLED/Neo QLED suggested for bright rooms.",
+    body: L ? "**Conseil** — Viser QLED/Neo QLED.\n"
+            : "**Tip** — Aim for QLED/Neo QLED.\n",
+    links: [{label:"Amazon", url: withTag("https://www.amazon.ca/s?k=samsung+smart+tv+qled")}]
+  };
+}
+function solarPost(lang="fr"){
+  const L = lang==="fr";
+  const title = L ? "Panneaux solaires plug-and-play — guide 2025"
+                  : "Plug-and-Play Solar — 2025 Guide";
+  const id = idOf(title, lang);
+  return {
+    id, title, date: today(), tags:["énergie","solaire","maison"],
+    image: `https://source.unsplash.com/1280x720/?home%20solar%20panels&sig=${id}`,
+    summary: L ? "Budget, installation, sécurité, rendement."
+               : "Budget, install, safety, output.",
+    body: L ? "**Astuces** — Débuter <1000W, protections, orientation.\n"
+            : "**Tips** — Start <1000W, protection, orientation.\n",
+    links: [
+      {label:"Amazon",    url: withTag("https://www.amazon.ca/s?k=solar+panel+kit+home")},
+      {label:"AliExpress",url: "https://www.aliexpress.com/wholesale?SearchText=home+solar+kit"}
+    ]
+  };
+}
+
+async function readArr(p){ try{ return JSON.parse(await fs.readFile(p,"utf8")) } catch{ return [] } }
+function mergeNewest(a,b,cap=40){
+  const map=new Map();
+  for(const p of [...a,...b]){
+    const k=p.id||p.title;
+    if(!map.has(k)) map.set(k,p);
+    else { const q=map.get(k); map.set(k, new Date(p.date)>=new Date(q.date)?p:q); }
+  }
+  return [...map.values()].sort((x,y)=>new Date(y.date)-new Date(x.date)).slice(0,cap);
+}
+
+async function main(){
+  await fs.mkdir(POSTS_DIR,{recursive:true});
+  const fr = [smartwatchList("fr"), thermostatPost("fr"), samsungTvPost("fr"), solarPost("fr")];
+  const en = [smartwatchList("en"), thermostatPost("en"), samsungTvPost("en"), solarPost("en")];
+  const curFR = await readArr(OUT_FR); const curEN = await readArr(OUT_EN);
+  const outFR = mergeNewest(curFR, fr, 40); const outEN = mergeNewest(curEN, en, 40);
+  await fs.writeFile(OUT_FR, JSON.stringify(outFR,null,2), "utf8");
+  await fs.writeFile(OUT_EN, JSON.stringify(outEN,null,2), "utf8");
+  console.log("✅ niche FR:", outFR.length, "• niche EN:", outEN.length);
+}
+main().catch(e=>{ console.error(e); process.exit(1); });
