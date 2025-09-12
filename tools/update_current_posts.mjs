@@ -1,5 +1,3 @@
-// tools/update_current_posts.mjs
-// Nettoie/bonifie les posts FR/EN existants (tags, images, dates, CTA, liens affiliés).
 import fs from "fs/promises";
 import path from "path";
 
