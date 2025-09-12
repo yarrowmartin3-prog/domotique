@@ -1,22 +1,28 @@
 name: Auto Refresh Content
 on:
   schedule:
-    - cron: "17 2 * * *"   # tous les jours 02:17 UTC
-  workflow_dispatch:
-
+    - cron: "17 2 * * *"
+  workflow_dispatch: {}
 permissions:
   contents: write
-
 jobs:
   refresh:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
-        with: { node-version: "20" }
+        with:
+          node-version: "20"
       - run: npm ci || npm i
-      - run: node tools/generate_niche_articles.mjs
-      - run: node tools/refresh_content.mjs
+      - name: Fix existing posts
+        run: npm run posts:fix
+        env: { AMAZON_TAG: "TON_TAG" }
+      - name: Generate niche posts
+        run: npm run refresh:niche
+        env: { AMAZON_TAG: "TON_TAG" }
+      - name: Refresh RSS posts
+        run: npm run refresh:rss
+        env: { AMAZON_TAG: "TON_TAG" }
       - name: Commit & push
         run: |
           git config user.name "bot"
