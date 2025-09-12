@@ -4,7 +4,7 @@
     "title": "Zigbee lighting — evening scenes",
     "date": "2025-09-10",
     "tags": ["lighting","zigbee"],
-    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=800",
+    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200",
     "summary": "Automatic evening dimming.",
     "body": "Lights at 30% at 8PM then 10% at 10PM."
   },
@@ -13,8 +13,35 @@
     "title": "IP camera — motion detection",
     "date": "2025-09-11",
     "tags": ["security","camera","ip"],
-    "image": "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=800",
+    "image": "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=1200",
     "summary": "Notifications + 10s clip to NAS.",
-    "body": "Detection zone 70%, medium sensitivity, night schedule."
+    "body": "70% detection zone, medium sensitivity, night schedule."
+  },
+  {
+    "id": "dm-003-en",
+    "title": "MQTT energy meter",
+    "date": "2025-09-12",
+    "tags": ["energy","mqtt","dashboard"],
+    "image": "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=1200",
+    "summary": "kWh by room + spike alerts >1200W.",
+    "body": "Normalized topics, daily & weekly charts."
+  },
+  {
+    "id": "dm-004-en",
+    "title": "Smart thermostat + CO₂",
+    "date": "2025-09-13",
+    "tags": ["hvac","co2","comfort"],
+    "image": "https://images.unsplash.com/photo-1511436656560-14c61f07e9b4?w=1200",
+    "summary": "21°C daytime, 18.5°C night, boost fan >1000 ppm.",
+    "body": "Open window = heating pause 15 min."
+  },
+  {
+    "id": "dm-005-en",
+    "title": "‘I’m leaving’ voice scene",
+    "date": "2025-09-14",
+    "tags": ["voice","automations","scenes"],
+    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200",
+    "summary": "Lights off, lock, alarm armed, eco mode.",
+    "body": "FR/EN aliases, spoken confirmation."
   }
 ]
