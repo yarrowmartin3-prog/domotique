@@ -1,0 +1,15 @@
+{
+  "type": "module",
+  "scripts": {
+    "dev": "npx http-server . -p 8080 -c-1",
+    "refresh:niche": "node tools/generate_niche_articles.mjs",
+    "refresh:rss": "node tools/refresh_content.mjs",
+    "refresh:all": "npm run refresh:niche && npm run refresh:rss"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
