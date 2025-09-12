@@ -6,6 +6,7 @@
   const cfg = window.DM_CFG || { POSTS_URL: "./posts/posts.json", TEXTS:{} };
   const t = (k,d)=> (cfg.TEXTS && cfg.TEXTS[k]) || d;
   const fmtDate = s => { try { return new Date(s).toLocaleDateString(document.documentElement.lang||'en-CA'); } catch { return s; } };
+  const FALLBACK = "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200&auto=format&fit=crop&q=70";
 
   async function loadPosts(){
     const res = await fetch(cfg.POSTS_URL, { cache:"no-store" });
@@ -18,12 +19,20 @@
     const all=new Set();
     posts.forEach(p=>(p.tags||[]).forEach(x=>all.add(x)));
     const labelAll = document.documentElement.lang==='fr'?'Tous les tags':'All tags';
-    TAGSEL.innerHTML = `<option value="">${labelAll}</option>` + [...all].sort().map(x=>`<option value="${x}">${x}</option>`).join('');
+    TAGSEL && (TAGSEL.innerHTML = `<option value="">${labelAll}</option>` + [...all].sort().map(x=>`<option value="${x}">${x}</option>`).join(''));
   }
 
   function match(p,q,tag){
     const hay=[p.title,p.summary,p.body,...(p.tags||[])].join(" ").toLowerCase();
     return (!q||hay.includes(q.toLowerCase())) && (!tag||(p.tags||[]).includes(tag));
+  }
+
+  function fixImage(el, url){
+    el.referrerPolicy = "no-referrer";
+    el.loading = "lazy";
+    el.decoding = "async";
+    el.src = (url && url.startsWith("http")) ? url : FALLBACK;
+    el.onerror = ()=> { el.onerror=null; el.src=FALLBACK; };
   }
 
   function render(posts){
@@ -45,12 +54,11 @@
         const sum=node.querySelector('.summary');
         const links=node.querySelector('.links');
 
-        img.src=p.image||''; img.alt=p.title||''; img.loading="lazy"; img.decoding="async";
+        fixImage(img, p.image);
         title.textContent=p.title||'';
         meta.textContent=[fmtDate(p.date||''),(p.tags||[]).join(' • ')].filter(Boolean).join(' — ');
         sum.textContent=p.summary||'';
 
-        // bouton “Lire l’article / Read article”
         const isFR = document.documentElement.lang === 'fr';
         const read = document.createElement('a');
         read.className='btn-read';
@@ -59,7 +67,6 @@
         read.setAttribute('aria-label', (isFR?'Lire ':'Read ') + (p.title||'article'));
         links.appendChild(read);
 
-        // éventuels liens affiliés rapides (si tu veux sur la carte)
         (p.links||[]).slice(0,1).forEach(l=>{
           const a=document.createElement('a');
           a.className='btn-read';
@@ -68,7 +75,6 @@
           links.appendChild(a);
         });
 
-        // clic carte (sauf clic sur boutons/liens)
         card.addEventListener('click',(e)=>{
           if(e.target.closest('a,button')) return;
           window.location.href = read.href;
@@ -78,7 +84,6 @@
       });
   }
 
-  // Thème
   BTN_THEME?.addEventListener('click', ()=>{
     document.documentElement.classList.toggle('dark');
     localStorage.setItem('dm_theme', document.documentElement.classList.contains('dark')?'dark':'light');
