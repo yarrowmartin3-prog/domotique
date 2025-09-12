@@ -1,0 +1,20 @@
+[
+  {
+    "id": "dm-001-en",
+    "title": "Zigbee lighting — evening scenes",
+    "date": "2025-09-10",
+    "tags": ["lighting","zigbee"],
+    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=800",
+    "summary": "Automatic evening dimming.",
+    "body": "Lights at 30% at 8PM then 10% at 10PM."
+  },
+  {
+    "id": "dm-002-en",
+    "title": "IP camera — motion detection",
+    "date": "2025-09-11",
+    "tags": ["security","camera","ip"],
+    "image": "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=800",
+    "summary": "Notifications + 10s clip to NAS.",
+    "body": "Detection zone 70%, medium sensitivity, night schedule."
+  }
+]
