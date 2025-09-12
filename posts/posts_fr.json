@@ -4,17 +4,44 @@
     "title": "Éclairage Zigbee — scènes soirée",
     "date": "2025-09-10",
     "tags": ["éclairage","zigbee"],
-    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=800",
+    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200",
     "summary": "Gradation automatique le soir.",
     "body": "Lampe à 30% à 20h puis 10% à 22h."
   },
   {
     "id": "dm-002",
-    "title": "Caméra IP — détection mouvement",
+    "title": "Caméra IP — détection de mouvement",
     "date": "2025-09-11",
     "tags": ["sécurité","caméra","ip"],
-    "image": "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=800",
+    "image": "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=1200",
     "summary": "Notifications + clip 10s vers NAS.",
     "body": "Zone 70%, sensibilité moyenne, horaire nuit."
+  },
+  {
+    "id": "dm-003",
+    "title": "Compteur d’énergie MQTT",
+    "date": "2025-09-12",
+    "tags": ["énergie","mqtt","dashboard"],
+    "image": "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=1200",
+    "summary": "Suivi conso kWh par pièce et alertes pics >1200W.",
+    "body": "Topics MQTT normalisés, graphe quotidien et hebdo."
+  },
+  {
+    "id": "dm-004",
+    "title": "Thermostat intelligent + CO₂",
+    "date": "2025-09-13",
+    "tags": ["hvac","co2","confort"],
+    "image": "https://images.unsplash.com/photo-1511436656560-14c61f07e9b4?w=1200",
+    "summary": "21°C jour, 18.5°C nuit, boost VMC >1000 ppm.",
+    "body": "Fenêtre ouverte = pause chauffage 15 min."
+  },
+  {
+    "id": "dm-005",
+    "title": "Scène ‘Je pars’ (voix)",
+    "date": "2025-09-14",
+    "tags": ["voix","automations","scènes"],
+    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200",
+    "summary": "Extinction lumières, verrou, alarme armée, éco-mode.",
+    "body": "Alias FR/EN, retour audio de confirmation."
   }
 ]
