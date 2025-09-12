@@ -3,25 +3,20 @@
 body{ margin:0; font-family:system-ui, Arial, sans-serif; line-height:1.45; background:var(--bg); color:var(--text); }
 .site-header{ padding:20px; text-align:center; }
 .subtitle{ color:#555; margin:6px 0 0; }
+.subtitle a{ text-decoration:none; }
 .subtitle button{ padding:6px 10px; border:1px solid #ddd; border-radius:10px; background:#fff; }
-
 .toolbar{ display:flex; gap:var(--gap); padding:0 16px 12px; }
 .toolbar input,.toolbar select{ flex:1; padding:10px 12px; border:1px solid #ddd; border-radius:10px; background:#fff; }
-
 .feed{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:var(--gap); padding:0 16px 24px; }
-
 .card{ display:grid; grid-template-columns:120px 1fr; gap:var(--gap); padding:var(--gap);
   border:1px solid #eee; border-radius:var(--radius); background:var(--card); box-shadow:0 1px 3px rgba(0,0,0,.06); }
-
 .card .thumb{ width:120px; height:120px; object-fit:cover; border-radius:12px; background:#f2f2f2; }
 .card .title{ margin:2px 0 6px; font-size:18px; }
 .card .meta{ margin:0 0 8px; color:var(--muted); font-size:13px; }
 .card .summary{ margin:0 0 8px; color:#222; }
 .card .links a{ margin-right:10px; font-size:14px; }
-
 .site-footer{ padding:14px 16px; border-top:1px solid #eee; text-align:center; color:#666; }
-
-/* Thème sombre */
+/* Dark theme */
 .dark{ --bg:#0f1115; --card:#151924; --text:#e9eef7; --muted:#a9b3c2; }
 .dark .card{ border-color:#1f2431; box-shadow:none; }
 .dark .toolbar input, .dark .toolbar select, .dark .subtitle button{ background:#0f1115; color:#e9eef7; border-color:#2a3140; }
