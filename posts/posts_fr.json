@@ -1,29 +1,31 @@
-[
-  {
-    "id": "dm-001",
-    "title": "Éclairage Zigbee — scènes soirée",
-    "date": "2025-09-10",
-    "tags": ["éclairage", "zigbee"],
-    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200",
-    "summary": "Gradation automatique le soir.",
-    "body": "Lampe à 30% à 20h puis 10% à 22h.\n\nUtiliser un détecteur de mouvement dans le couloir pour allumer automatiquement la lumière en douceur."
-  },
-  {
-    "id": "dm-002",
-    "title": "Sécurité — Caméras IP et alertes",
-    "date": "2025-09-12",
-    "tags": ["sécurité", "caméra"],
-    "image": "https://images.unsplash.com/photo-1591369263562-4c2f7a83e1cb?w=1200",
-    "summary": "Surveillez votre maison avec des caméras IP.",
-    "body": "Installation de 2 caméras IP dans l’entrée et le jardin.\n\nConfiguration avec détection de mouvement et notification mobile instantanée."
-  },
-  {
-    "id": "dm-003",
-    "title": "Énergie — Suivi consommation",
-    "date": "2025-09-14",
-    "tags": ["énergie", "suivi"],
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6d62d95e?w=1200",
-    "summary": "Suivi en temps réel de la consommation électrique.",
-    "body": "Utiliser un capteur connecté (Shelly EM, Zigbee Smart Plug) pour suivre la consommation.\n\nExporter les données dans Home Assistant pour créer des graphiques quotidiens et hebdomadaires."
-  }
-]
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Article — Domotique</title>
+  <meta name="description" content="Article domotique détaillé.">
+  <link rel="stylesheet" href="./css/auto_content.css"/>
+  <link rel="stylesheet" href="./css/pro.css"/>
+</head>
+<body>
+  <nav class="topnav">
+    <a class="brand" href="./">🏠 Domotique</a>
+    <div class="spacer"></div>
+    <a class="navlink" href="./">FR</a>
+    <a class="navlink" href="./en/post.html?id=" id="switchLang">EN</a>
+  </nav>
+
+  <main id="post" class="post-container"></main>
+
+  <script>
+    window.DM_POST_CFG = {
+      POSTS_URL: "./posts/posts_fr.json",
+      LABELS: { notFound: "Article introuvable", meta: "Publié le" },
+      LANG_SWITCH: "./en/post.html?id="
+    };
+  </script>
+  <script src="./js/post_page.js"></script>
+  <script src="./js/style_upgrader.js"></script>
+</body>
+</html>
