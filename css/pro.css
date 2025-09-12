@@ -37,3 +37,28 @@
 .share-buttons button:hover {
   text-decoration: underline;
 }
+/* Top nav (si utilisée) */
+.topnav{ display:flex; align-items:center; gap:12px; padding:10px 16px; border-bottom:1px solid #eee; background:#fff; position:sticky; top:0; z-index:9; }
+.topnav .brand{ font-weight:800; text-decoration:none; color:#111; }
+.topnav .spacer{ flex:1; }
+.topnav .navlink{ text-decoration:none; color:#444; padding:6px 10px; border-radius:8px; }
+.topnav .navlink:hover{ background:#f3f5f8; }
+.dark .topnav{ background:#0f1115; border-color:#1f2431; }
+.dark .topnav .brand{ color:#e9eef7; }
+.dark .topnav .navlink{ color:#cfd6e6; }
+.dark .topnav .navlink:hover{ background:#151924; }
+
+/* Bandeau déjà ajouté plus tôt
+.banner{ background:linear-gradient(90deg,#3b82f6,#22c55e); color:#fff; text-align:center; padding:8px 12px; font-size:14px; font-weight:600; } */
+
+/* Cartes cliquables (si la liste ouvre post.html?id=...) */
+.card.clickable { cursor:pointer; transition:transform .06s ease, box-shadow .12s ease; }
+.card.clickable:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(0,0,0,.09); }
+
+/* Boutons de partage (liste & article) */
+.share-buttons { margin-top: 12px; display:flex; gap:10px; flex-wrap:wrap; }
+.share-btn { display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border-radius:999px; border:1px solid #e5e7eb; background:#fff; color:var(--accent); font-size:13px; font-weight:600; cursor:pointer; text-decoration:none; }
+.share-btn svg{ display:block; }
+.share-btn:hover{ background:#f5f8ff; }
+.dark .share-btn{ background:#0f1115; border-color:#2a3140; color:var(--accent); }
+.dark .share-btn:hover{ background:#151924; }
