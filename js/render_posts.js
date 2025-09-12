@@ -1,9 +1,7 @@
-// js/render_posts.js
 (async function () {
   const FEED = document.getElementById('feed');
   const TAGSEL = document.getElementById('tagFilter');
   const SEARCH = document.getElementById('search');
-  const BTN_THEME = document.getElementById('switchTheme');
   const cfg = window.DM_CFG || { POSTS_URL: "./posts/posts_fr.json", TEXTS:{} };
   const t = (k,d)=> (cfg.TEXTS && cfg.TEXTS[k]) || d;
   const FALLBACK = "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200&auto=format&fit=crop&q=70";
@@ -64,11 +62,6 @@
       FEED.appendChild(node);
     });
   }
-  BTN_THEME?.addEventListener('click', ()=>{
-    document.documentElement.classList.toggle('dark');
-    localStorage.setItem('dm_theme', document.documentElement.classList.contains('dark')?'dark':'light');
-  });
-  if(localStorage.getItem('dm_theme')==='dark') document.documentElement.classList.add('dark');
 
   let POSTS=[]; try{ POSTS=await loadPosts(); buildTags(POSTS); render(POSTS); }
   catch(e){ console.error(e); FEED.innerHTML=`<p class="error">Erreur: ${e.message}</p>`; }
