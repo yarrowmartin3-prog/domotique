@@ -9,7 +9,7 @@
   <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/" hreflang="fr">
   <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/en/" hreflang="en">
 
-  <!-- Styles pro + thème auto -->
+  <!-- Styles -->
   <link rel="stylesheet" href="../css/theme.css" />
   <link rel="stylesheet" href="../css/pro.css" />
 </head>
@@ -44,7 +44,6 @@
     <section id="feed" class="feed" aria-live="polite"></section>
   </main>
 
-  <!-- Card template -->
   <template id="card-tmpl">
     <article class="card">
       <img class="thumb" alt="" loading="lazy" decoding="async" />
@@ -57,19 +56,17 @@
     </article>
   </template>
 
-  <footer class="main-wrap" style="padding:24px 16px">
+  <footer class="main-wrap" style="padding:24px 16px;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap">
     <small class="muted">© Home Automation — Guides & Tips • EN</small>
+    <a class="btn-bmc" href="https://www.buymeacoffee.com/yarrowmart9" target="_blank" rel="noopener">☕ Buy me a coffee</a>
   </footer>
 
-  <!-- Page config (EN) -->
   <script>
     window.DM_CFG = {
       POSTS_URL: "../posts/posts_en.json",
       TEXTS: { noContent: "No content yet.", noResult: "No result." }
     };
   </script>
-
-  <!-- Scripts -->
   <script src="../js/style_upgrader.js"></script>
   <script src="../js/render_posts.js"></script>
 </body>
