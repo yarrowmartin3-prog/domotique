@@ -1,38 +1,11 @@
-<!doctype html>
-<html lang="fr">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Article — Domotique</title>
-  <meta name="description" content="Article détaillé de domotique : guides, sécurité, énergie, HVAC, assistants vocaux.">
-
-  <link rel="canonical" href="https://yarrowmartin3-prog.github.io/domotique/post.html">
-  <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/post.html" hreflang="fr">
-  <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/en/post.html" hreflang="en">
-  <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/post.html" hreflang="x-default">
-
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Article — Domotique">
-  <meta property="og:description" content="Article domotique détaillé : éclairage, sécurité, énergie, HVAC, assistants vocaux.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200">
-  <meta property="og:url" content="https://yarrowmartin3-prog.github.io/domotique/post.html">
-  <meta property="og:locale" content="fr_CA">
-  <meta name="twitter:card" content="summary_large_image">
-
-  <link rel="stylesheet" href="./css/auto_content.css"/>
-  <link rel="stylesheet" href="./css/pro.css"/>
-</head>
-<body>
-  <div class="banner">🌐 Nom de domaine officiel à venir — restez connectés !</div>
-
-  <nav class="topnav">
-    <a class="brand" href="./">🏠 Domotique</a>
-    <div class="spacer"></div>
-    <a class="navlink" href="./">FR</a>
-    <a class="navlink" href="./en/">EN</a>
-    <a class="navlink" href="./feed.xml">RSS</a>
-  </nav>
-
-  <header class="site-header">
-    <h1 id="post-title">Article Domotique</h1>
-    <p class="subtitle"><a href="./">← Retour à l’accueil</a> • <a href="./en/post
+[
+  {
+    "id": "dm-001",
+    "title": "Éclairage Zigbee — scènes soirée",
+    "date": "2025-09-10",
+    "tags": ["éclairage", "zigbee"],
+    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200",
+    "summary": "Gradation automatique le soir.",
+    "body": "Lampe à 30% à 20h puis 10% à 22h."
+  }
+]
