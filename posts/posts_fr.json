@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="./css/auto_content.css"/>
   <link rel="stylesheet" href="./css/pro.css"/>
 
-  <!-- JSON-LD (type générique, mis à jour dynamiquement par JS si besoin) -->
+  <!-- JSON-LD (sera enrichi dynamiquement par JS) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -41,7 +41,7 @@
   <!-- Bandeau -->
   <div class="banner">🌐 Nom de domaine officiel à venir — restez connectés !</div>
 
-  <!-- (Optionnel) Navbar simple -->
+  <!-- Navbar -->
   <nav class="topnav">
     <a class="brand" href="./">🏠 Domotique</a>
     <div class="spacer"></div>
@@ -50,14 +50,16 @@
     <a class="navlink" href="./feed.xml">RSS</a>
   </nav>
 
+  <!-- En-tête -->
   <header class="site-header">
     <h1 id="post-title">Article</h1>
     <p class="subtitle"><a href="./">← Retour à l’accueil</a> • <a href="./en/post.html" rel="nofollow">English</a></p>
   </header>
 
+  <!-- Contenu article -->
   <main id="post" class="feed" style="max-width:860px;margin:0 auto;padding:0 16px 24px;"></main>
 
-  <!-- Config côté FR -->
+  <!-- Config FR -->
   <script>
     window.DM_POST_CFG = {
       POSTS_URL: "./posts/posts_fr.json",
