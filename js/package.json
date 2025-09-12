@@ -18,3 +18,9 @@
     "http-server": "^14.1.1"
   }
 }
+{
+  "scripts": {
+    "site:auto-fix": "node tools/auto_fix.mjs",
+    "ci:heal": "npm run site:auto-fix && npm run posts:fix && npm run site:check"
+  }
+}
