@@ -1,31 +1,29 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8"/>
-  <meta name="viewport" content="width=device-width,initial-scale=1"/>
-  <title>Article — Home Automation</title>
-  <meta name="description" content="Detailed home automation article.">
-  <link rel="stylesheet" href="../css/auto_content.css"/>
-  <link rel="stylesheet" href="../css/pro.css"/>
-</head>
-<body>
-  <nav class="topnav">
-    <a class="brand" href="../">🏠 Home Automation</a>
-    <div class="spacer"></div>
-    <a class="navlink" href="../post.html?id=" id="switchLang">FR</a>
-    <a class="navlink" href="./">EN</a>
-  </nav>
-
-  <main id="post" class="post-container"></main>
-
-  <script>
-    window.DM_POST_CFG = {
-      POSTS_URL: "../posts/posts_en.json",
-      LABELS: { notFound: "Article not found", meta: "Published" },
-      LANG_SWITCH: "../post.html?id="
-    };
-  </script>
-  <script src="../js/post_page.js"></script>
-  <script src="../js/style_upgrader.js"></script>
-</body>
-</html>
+[
+  {
+    "id": "dm-001",
+    "title": "Zigbee Lighting — Evening Scenes",
+    "date": "2025-09-10",
+    "tags": ["lighting", "zigbee"],
+    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200",
+    "summary": "Smooth dimming in the evening.",
+    "body": "Lamp at 30% at 20:00 then 10% at 22:00.\n\nMotion sensor in the hallway for soft night lighting."
+  },
+  {
+    "id": "dm-002",
+    "title": "Security — IP Cameras & Alerts",
+    "date": "2025-09-12",
+    "tags": ["security", "camera"],
+    "image": "https://images.unsplash.com/photo-1591369263562-4c2f7a83e1cb?w=1200",
+    "summary": "Monitor your home with IP cameras.",
+    "body": "Two cameras at the entrance and garden.\n\nMotion detection and mobile notifications."
+  },
+  {
+    "id": "dm-003",
+    "title": "Energy — Usage Tracking",
+    "date": "2025-09-14",
+    "tags": ["energy", "tracking"],
+    "image": "https://images.unsplash.com/photo-1581091215367-59ab6d62d95e?w=1200",
+    "summary": "Realtime electricity tracking.",
+    "body": "Use smart plugs or Shelly EM. Send to Home Assistant dashboards."
+  }
+]
