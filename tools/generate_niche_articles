@@ -1,125 +1,74 @@
 // tools/generate_niche_articles.mjs
-// Génère des articles FR/EN “niche” (montres, thermostats, TV Samsung, solaire)
-// Règle demandée: la VeryFit ID25 est TOUJOURS en dernier dans les listes montres.
-
-import fs from "fs/promises";
-import path from "path";
-const ROOT = path.resolve(process.cwd(), ".");
-const POSTS_DIR = path.join(ROOT, "posts");
-const OUT_FR = path.join(POSTS_DIR, "posts_fr.json");
-const OUT_EN = path.join(POSTS_DIR, "posts_en.json");
-
-// ⬇️ Mets TON tag Amazon (ex. "yarrow-20")
+// Génère 4 nouveaux articles FR & EN (montres / thermostat / TV Samsung / solaire)
+import fs from "fs/promises"; import path from "path";
+const ROOT = process.cwd(), POSTS = path.join(ROOT,"posts");
+const OUT_FR = path.join(POSTS,"posts_fr.json"), OUT_EN = path.join(POSTS,"posts_en.json");
 const AMAZON_TAG = process.env.AMAZON_TAG || "TON_TAG";
+const withTag = (u)=>{ if(!AMAZON_TAG) return u; try{const x=new URL(u); if(!x.searchParams.get("tag")) x.searchParams.set("tag",AMAZON_TAG); return x.toString();}catch{ return u; } };
+const today = ()=> new Date().toISOString().slice(0,10);
+const idOf = (t,l)=> Buffer.from((t+"|"+l)).toString("base64").replace(/[^a-z0-9]/gi,"").slice(0,10);
 
-const withTag = (u) => {
-  if (!AMAZON_TAG) return u;
-  try {
-    const x = new URL(u);
-    if (!x.searchParams.get("tag")) x.searchParams.set("tag", AMAZON_TAG);
-    return x.toString();
-  } catch { return u; }
-};
-const today = () => new Date().toISOString().slice(0,10);
-const idOf  = (t,l) => Buffer.from((t+"|"+l)).toString("base64").replace(/[^a-z0-9]/gi,"").slice(0,10);
-
-function smartwatchList(lang="fr"){
-  const L = lang==="fr";
-  const title = L ? "Top 5 montres intelligentes 2025 — sport & santé"
-                  : "Top 5 Smartwatches 2025 — Fitness & Health";
-  const id    = idOf(title, lang);
-  // VeryFit ID25 en dernier :
-  const order = [
-    {name:"Apple Watch Series 10", url: withTag("https://www.amazon.ca/s?k=apple+watch+series+10")},
-    {name:"Garmin Forerunner 265", url: withTag("https://www.amazon.ca/s?k=garmin+forerunner+265")},
-    {name:"Fitbit Versa 4",        url: withTag("https://www.amazon.ca/s?k=fitbit+versa+4")},
-    {name:"Huawei Watch GT 4",     url: withTag("https://www.amazon.ca/s?k=huawei+watch+gt+4")},
-    {name:"VeryFit ID25",          url: withTag("https://www.amazon.ca/s?k=veryfit+id25")}
-  ];
-  const blocks = order.map(m=>`### ${m.name}
-- ${L?"Lien":"Link"} : [Amazon](${m.url})`).join("\n\n");
+function smartwatch(lang="fr"){
+  const L=lang==="fr", title=L?"Top 5 montres intelligentes 2025 — sport & santé":"Top 5 Smartwatches 2025 — Fitness & Health", id=idOf(title,lang);
+  const order=[ "Apple Watch Series 10","Garmin Forerunner 265","Fitbit Versa 4","Huawei Watch GT 4","VeryFit ID25" ];
+  const bullets=order.map(n=>`- ${n}`).join("\n");
   return {
-    id, title, date: today(),
-    tags: ["montre","wearable","santé"],
-    image: `https://source.unsplash.com/1280x720/?smartwatch&sig=${id}`,
-    summary: L ? "Comparatif 2025 (fitness, santé, notifications)."
-               : "2025 comparison (fitness, health, notifications).",
-    body: (L?"**Résumé** — Sélection sport/santé, autonomie, intégration."
-           :"**Summary** — Fitness/health picks, battery, integration.")+"\n\n"+blocks,
-    links: [{label:"Amazon", url: withTag("https://www.amazon.ca/s?k=smartwatch")}]
+    id,title,date:today(),tags:[L?"montre":"watch","wearable",L?"santé":"health"],
+    image:`https://source.unsplash.com/1280x720/?smartwatch&sig=${id}`,
+    summary:L?"Comparatif 2025 (fitness, santé, notifications).":"2025 comparison (fitness, health, notifications).",
+    body:(L?"## Résumé\nSélection axée sport/santé.\n":"## Summary\nFitness/health focused.\n")+"\n"+bullets+"\n\n---\n"+(L?"**Soutien** : certains liens sont affiliés. Merci !":"**Support**: some links are affiliate links. Thank you!"),
+    links:[{label:"Amazon",url:withTag("https://www.amazon.ca/s?k=smartwatch")}]
   };
 }
-function thermostatPost(lang="fr"){
-  const L = lang==="fr";
-  const title = L ? "Nest vs Ecobee : quel thermostat intelligent en 2025 ?"
-                  : "Nest vs Ecobee: Which Smart Thermostat in 2025?";
-  const id = idOf(title, lang);
+function thermostat(lang="fr"){
+  const L=lang==="fr", title=L?"Nest vs Ecobee : quel thermostat intelligent en 2025 ?":"Nest vs Ecobee: Which Smart Thermostat in 2025?", id=idOf(title,lang);
   return {
-    id, title, date: today(), tags:["thermostat","énergie","hvac"],
-    image: `https://source.unsplash.com/1280x720/?smart%20thermostat&sig=${id}`,
-    summary: L ? "Compatibilité, capteurs, économies."
-               : "Compatibility, sensors, savings.",
-    body: L ? "**Aperçu** — Matter, capteurs, économies.\n"
-            : "**Overview** — Matter, sensors, savings.\n",
-    links: [
-      {label:"Amazon", url: withTag("https://www.amazon.ca/s?k=ecobee+smart+thermostat")},
-      {label:"Amazon", url: withTag("https://www.amazon.ca/s?k=nest+learning+thermostat")}
+    id,title,date:today(),tags:[L?"thermostat":"thermostat",L?"énergie":"energy","hvac"],
+    image:`https://source.unsplash.com/1280x720/?smart%20thermostat&sig=${id}`,
+    summary:L?"Compatibilité, capteurs, économies.":"Compatibility, sensors, savings.",
+    body:(L?"## En bref\nMatter, capteurs, économies.":"## Overview\nMatter, sensors, savings.")+"\n\n---\n"+(L?"**Soutien** : certains liens sont affiliés. Merci !":"**Support**: some links are affiliate links. Thank you!"),
+    links:[
+      {label:"Amazon",url:withTag("https://www.amazon.ca/s?k=ecobee+smart+thermostat")},
+      {label:"Amazon",url:withTag("https://www.amazon.ca/s?k=nest+learning+thermostat")}
     ]
   };
 }
-function samsungTvPost(lang="fr"){
-  const L = lang==="fr";
-  const title = L ? "Samsung Smart TV 2025 — la meilleure pour SmartThings ?"
-                  : "Samsung Smart TV 2025 — Best for SmartThings?";
-  const id = idOf(title, lang);
+function samsungTv(lang="fr"){
+  const L=lang==="fr", title=L?"Samsung Smart TV 2025 — la meilleure pour SmartThings ?":"Samsung Smart TV 2025 — Best for SmartThings?", id=idOf(title,lang);
   return {
-    id, title, date: today(), tags:["tv","samsung","smartthings"],
-    image: `https://source.unsplash.com/1280x720/?samsung%20tv%20living%20room&sig=${id}`,
-    summary: L ? "QLED/Neo QLED conseillés pour salon lumineux."
-               : "QLED/Neo QLED suggested for bright rooms.",
-    body: L ? "**Conseil** — Viser QLED/Neo QLED.\n"
-            : "**Tip** — Aim for QLED/Neo QLED.\n",
-    links: [{label:"Amazon", url: withTag("https://www.amazon.ca/s?k=samsung+smart+tv+qled")}]
+    id,title,date:today(),tags:["tv","samsung","smartthings"],
+    image:`https://source.unsplash.com/1280x720/?samsung%20tv%20living%20room&sig=${id}`,
+    summary:L?"QLED/Neo QLED recommandées pour salon lumineux.":"QLED/Neo QLED suggested for bright rooms.",
+    body:(L?"## Conseil\nVisez QLED/Neo QLED; HDMI 2.1 pour le jeu.":"## Tip\nAim for QLED/Neo QLED; HDMI 2.1 for gaming.")+"\n\n---\n"+(L?"**Soutien** : certains liens sont affiliés. Merci !":"**Support**: some links are affiliate links. Thank you!"),
+    links:[{label:"Amazon",url:withTag("https://www.amazon.ca/s?k=samsung+smart+tv+qled")}]
   };
 }
-function solarPost(lang="fr"){
-  const L = lang==="fr";
-  const title = L ? "Panneaux solaires plug-and-play — guide 2025"
-                  : "Plug-and-Play Solar — 2025 Guide";
-  const id = idOf(title, lang);
+function solar(lang="fr"){
+  const L=lang==="fr", title=L?"Panneaux solaires plug-and-play — guide 2025":"Plug-and-Play Solar — 2025 Guide", id=idOf(title,lang);
   return {
-    id, title, date: today(), tags:["énergie","solaire","maison"],
-    image: `https://source.unsplash.com/1280x720/?home%20solar%20panels&sig=${id}`,
-    summary: L ? "Budget, installation, sécurité, rendement."
-               : "Budget, install, safety, output.",
-    body: L ? "**Astuces** — Débuter <1000W, protections, orientation.\n"
-            : "**Tips** — Start <1000W, protection, orientation.\n",
-    links: [
-      {label:"Amazon",    url: withTag("https://www.amazon.ca/s?k=solar+panel+kit+home")},
-      {label:"AliExpress",url: "https://www.aliexpress.com/wholesale?SearchText=home+solar+kit"}
+    id,title,date:today(),tags:[L?"énergie":"energy",L?"solaire":"solar",L?"maison":"home"],
+    image:`https://source.unsplash.com/1280x720/?home%20solar%20panels&sig=${id}`,
+    summary:L?"Budget, installation, sécurité, rendement.":"Budget, install, safety, output.",
+    body:(L?"## Astuces\nCommencez <1000W; protections; orientation.":"## Tips\nStart <1000W; protection; orientation.")+"\n\n---\n"+(L?"**Soutien** : certains liens sont affiliés. Merci !":"**Support**: some links are affiliate links. Thank you!"),
+    links:[
+      {label:"Amazon",url:withTag("https://www.amazon.ca/s?k=solar+panel+kit+home")},
+      {label:"AliExpress",url:"https://www.aliexpress.com/wholesale?SearchText=home+solar+kit"}
     ]
   };
 }
-
 async function readArr(p){ try{ return JSON.parse(await fs.readFile(p,"utf8")) } catch{ return [] } }
 function mergeNewest(a,b,cap=40){
   const map=new Map();
-  for(const p of [...a,...b]){
-    const k=p.id||p.title;
-    if(!map.has(k)) map.set(k,p);
-    else { const q=map.get(k); map.set(k, new Date(p.date)>=new Date(q.date)?p:q); }
-  }
+  for(const p of [...a,...b]){ const k=p.id||p.title; if(!map.has(k)) map.set(k,p); else { const q=map.get(k); map.set(k, new Date(p.date)>=new Date(q.date)?p:q); } }
   return [...map.values()].sort((x,y)=>new Date(y.date)-new Date(x.date)).slice(0,cap);
 }
-
 async function main(){
-  await fs.mkdir(POSTS_DIR,{recursive:true});
-  const fr = [smartwatchList("fr"), thermostatPost("fr"), samsungTvPost("fr"), solarPost("fr")];
-  const en = [smartwatchList("en"), thermostatPost("en"), samsungTvPost("en"), solarPost("en")];
-  const curFR = await readArr(OUT_FR); const curEN = await readArr(OUT_EN);
-  const outFR = mergeNewest(curFR, fr, 40); const outEN = mergeNewest(curEN, en, 40);
-  await fs.writeFile(OUT_FR, JSON.stringify(outFR,null,2), "utf8");
-  await fs.writeFile(OUT_EN, JSON.stringify(outEN,null,2), "utf8");
-  console.log("✅ niche FR:", outFR.length, "• niche EN:", outEN.length);
+  await fs.mkdir(POSTS,{recursive:true});
+  const fr = [smartwatch("fr"), thermostat("fr"), samsungTv("fr"), solar("fr")];
+  const en = [smartwatch("en"), thermostat("en"), samsungTv("en"), solar("en")];
+  const curFR = await readArr(OUT_FR), curEN = await readArr(OUT_EN);
+  await fs.writeFile(OUT_FR, JSON.stringify(mergeNewest(curFR, fr), null, 2), "utf8");
+  await fs.writeFile(OUT_EN, JSON.stringify(mergeNewest(curEN, en), null, 2), "utf8");
+  console.log("✅ niche générées FR/EN");
 }
 main().catch(e=>{ console.error(e); process.exit(1); });
