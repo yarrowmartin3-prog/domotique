@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Article — Domotique</title>
+  <meta name="description" content="Article détaillé de domotique : éclairage, sécurité, énergie, HVAC, assistants vocaux.">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./css/theme.css"/>
+  <link rel="stylesheet" href="./css/pro.css"/>
+
+  <!-- Open Graph (optionnel) -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Domotique — Article">
+  <meta property="og:description" content="Guides et astuces domotique.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200">
+</head>
+<body>
+  <div class="banner">🌟 Guides Domotique — Articles & Astuces</div>
+
+  <nav class="topnav">
+    <a class="brand" href="./">🏠 Domotique</a>
+    <div class="spacer"></div>
+    <a class="navlink" href="./">FR</a>
+    <a class="navlink" id="switchLang" href="./en/post.html?id=">EN</a>
+  </nav>
+
+  <main id="post" class="post-container"></main>
+
+  <!-- Config page (FR) -->
+  <script>
+    window.DM_POST_CFG = {
+      POSTS_URL: "./posts/posts_fr.json",
+      LABELS: { notFound: "Article introuvable", meta: "Publié le" },
+      LANG_SWITCH: "./en/post.html?id="
+    };
+  </script>
+
+  <!-- Scripts -->
+  <script src="./js/style_upgrader.js"></script>
+  <script src="./js/post_page.js"></script>
+</body>
+</html>
