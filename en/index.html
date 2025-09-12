@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Home Automation — Guides & Tips</title>
-  <meta name="description" content="Home automation in English: lighting, security, energy, HVAC, voice assistants. Guides, tips, scenes and dashboards.">
+  <meta name="description" content="Lighting, security, energy and HVAC tips. Practical examples for smarter homes.">
 
   <link rel="canonical" href="https://yarrowmartin3-prog.github.io/domotique/en/">
   <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/" hreflang="fr">
@@ -23,6 +23,10 @@
 
   <link rel="stylesheet" href="../css/auto_content.css" />
   <link rel="stylesheet" href="../css/pro.css" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"Home Automation — Guides & Tips","url":"https://yarrowmartin3-prog.github.io/domotique/en/","inLanguage":"en"}
+  </script>
 </head>
 <body>
   <div class="banner">🌐 Official domain coming soon — stay tuned!</div>
@@ -35,18 +39,17 @@
     <a class="navlink" href="../feed.xml">RSS</a>
   </nav>
 
-  <header class="site-header">
-    <h1>Home Automation</h1>
+  <header class="site-header header-gradient">
+    <h1>Home Automation — Guides & Tips</h1>
     <p class="subtitle">
-      Articles from <code>posts/posts_en.json</code> •
-      <a href="../" rel="nofollow">Français</a> •
+      Practical advice for lighting, security, energy and comfort.
       <button id="switchTheme">Theme</button>
     </p>
   </header>
 
-  <section class="toolbar">
-    <input id="search" type="search" placeholder="Search…" />
-    <select id="tagFilter"><option value="">All tags</option></select>
+  <section class="toolbar sticky-toolbar">
+    <input id="search" type="search" placeholder="Search…" aria-label="Search" />
+    <select id="tagFilter" aria-label="Filter by tag"><option value="">All tags</option></select>
   </section>
 
   <main id="feed" class="feed" aria-live="polite"></main>
@@ -63,15 +66,13 @@
     </article>
   </template>
 
-  <footer class="site-footer"><small>Home Automation — EN</small></footer>
+  <footer class="site-footer"><small>&copy; Home Automation — Guides & Tips</small></footer>
 
+  <!-- Config non visible (EN) -->
   <script>
     window.DM_CFG = {
       POSTS_URL: "../posts/posts_en.json",
-      TEXTS: {
-        noContent: "No content yet. Add entries in posts_en.json.",
-        noResult: "No result."
-      }
+      TEXTS: { noContent: "No content yet.", noResult: "No result." }
     };
   </script>
   <script src="../js/render_posts.js"></script>
