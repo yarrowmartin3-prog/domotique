@@ -1,0 +1,54 @@
+// tools/generate_niche_articles.mjs
+// Génère des articles FR/EN “niche” (montres, thermostats, TV Samsung, solaire)
+// Règle demandée: la VeryFit ID25 est TOUJOURS en dernier dans les listes montres.
+
+import fs from "fs/promises";
+import path from "path";
+const ROOT = path.resolve(process.cwd(), ".");
+const POSTS_DIR = path.join(ROOT, "posts");
+const OUT_FR = path.join(POSTS_DIR, "posts_fr.json");
+const OUT_EN = path.join(POSTS_DIR, "posts_en.json");
+
+// ⬇️ Mets TON tag Amazon (ex. "yarrow-20")
+const AMAZON_TAG = process.env.AMAZON_TAG || "TON_TAG";
+
+const withTag = (u) => {
+  if (!AMAZON_TAG) return u;
+  try {
+    const x = new URL(u);
+    if (!x.searchParams.get("tag")) x.searchParams.set("tag", AMAZON_TAG);
+    return x.toString();
+  } catch { return u; }
+};
+const today = () => new Date().toISOString().slice(0,10);
+const idOf  = (t,l) => Buffer.from((t+"|"+l)).toString("base64").replace(/[^a-z0-9]/gi,"").slice(0,10);
+
+function smartwatchList(lang="fr"){
+  const L = lang==="fr";
+  const title = L ? "Top 5 montres intelligentes 2025 — sport & santé"
+                  : "Top 5 Smartwatches 2025 — Fitness & Health";
+  const id    = idOf(title, lang);
+  // VeryFit ID25 en dernier :
+  const order = [
+    {name:"Apple Watch Series 10", url: withTag("https://www.amazon.ca/s?k=apple+watch+series+10")},
+    {name:"Garmin Forerunner 265", url: withTag("https://www.amazon.ca/s?k=garmin+forerunner+265")},
+    {name:"Fitbit Versa 4",        url: withTag("https://www.amazon.ca/s?k=fitbit+versa+4")},
+    {name:"Huawei Watch GT 4",     url: withTag("https://www.amazon.ca/s?k=huawei+watch+gt+4")},
+    {name:"VeryFit ID25",          url: withTag("https://www.amazon.ca/s?k=veryfit+id25")}
+  ];
+  const blocks = order.map(m=>`### ${m.name}
+- ${L?"Lien":"Link"} : [Amazon](${m.url})`).join("\n\n");
+  return {
+    id, title, date: today(),
+    tags: ["montre","wearable","santé"],
+    image: `https://source.unsplash.com/1280x720/?smartwatch&sig=${id}`,
+    summary: L ? "Comparatif 2025 (fitness, santé, notifications)."
+               : "2025 comparison (fitness, health, notifications).",
+    body: (L?"**Résumé** — Sélection sport/santé, autonomie, intégration."
+           :"**Summary** — Fitness/health picks, battery, integration.")+"\n\n"+blocks,
+    links: [{label:"Amazon", url: withTag("https://www.amazon.ca/s?k=smartwatch")}]
+  };
+}
+function thermostatPost(lang="fr"){
+  const L = lang==="fr";
+  const title = L ? "Nest vs Ecobee : quel
