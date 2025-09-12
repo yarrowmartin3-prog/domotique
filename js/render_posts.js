@@ -29,44 +29,56 @@
   function render(posts){
     FEED.innerHTML="";
     if(!posts.length){ FEED.innerHTML=`<p class="muted">${t('noContent','No content')}</p>`; return; }
-    const q=SEARCH.value.trim(), tag=TAGSEL.value||"";
+    const q=SEARCH?.value?.trim()||"", tag=TAGSEL?.value||"";
     const filtered=posts.filter(p=>match(p,q,tag));
     if(!filtered.length){ FEED.innerHTML=`<p class="muted">${t('noResult','No result')}</p>`; return; }
 
     const tmpl=document.getElementById('card-tmpl');
-    filtered.sort((a,b)=>new Date(b.date||0)-new Date(a.date||0)).forEach(p=>{
-      const node=tmpl.content.cloneNode(true);
-      const card=node.querySelector('.card');
-      const img=node.querySelector('.thumb');
-      const title=node.querySelector('.title');
-      const meta=node.querySelector('.meta');
-      const sum=node.querySelector('.summary');
-      const links=node.querySelector('.links');
+    filtered
+      .sort((a,b)=>new Date(b.date||0)-new Date(a.date||0))
+      .forEach(p=>{
+        const node=tmpl.content.cloneNode(true);
+        const card=node.querySelector('.card');
+        const img=node.querySelector('.thumb');
+        const title=node.querySelector('.title');
+        const meta=node.querySelector('.meta');
+        const sum=node.querySelector('.summary');
+        const links=node.querySelector('.links');
 
-      img.src=p.image||''; img.alt=p.title||''; img.loading="lazy";
-      title.textContent=p.title||'';
-      meta.textContent=[fmtDate(p.date||''),(p.tags||[]).join(' • ')].filter(Boolean).join(' — ');
-      sum.textContent=p.summary||'';
+        img.src=p.image||''; img.alt=p.title||''; img.loading="lazy"; img.decoding="async";
+        title.textContent=p.title||'';
+        meta.textContent=[fmtDate(p.date||''),(p.tags||[]).join(' • ')].filter(Boolean).join(' — ');
+        sum.textContent=p.summary||'';
 
-      // bouton “Lire l’article / Read article”
-      const isFR = document.documentElement.lang === 'fr';
-      const read = document.createElement('a');
-      read.className='btn-read';
-      read.textContent=isFR?'Lire l’article':'Read article';
-      read.href = (isFR? './post.html' : '../post.html') + `?id=${encodeURIComponent(p.id)}`;
-      links.appendChild(read);
+        // bouton “Lire l’article / Read article”
+        const isFR = document.documentElement.lang === 'fr';
+        const read = document.createElement('a');
+        read.className='btn-read';
+        read.textContent=isFR?'Lire l’article':'Read article';
+        read.href = (isFR? './post.html' : '../post.html') + `?id=${encodeURIComponent(p.id)}`;
+        read.setAttribute('aria-label', (isFR?'Lire ':'Read ') + (p.title||'article'));
+        links.appendChild(read);
 
-      // clic sur carte (sauf liens)
-      card.classList.add('clickable');
-      card.addEventListener('click',(e)=>{
-        if(e.target.closest('a,button')) return;
-        window.location.href = read.href;
+        // éventuels liens affiliés rapides (si tu veux sur la carte)
+        (p.links||[]).slice(0,1).forEach(l=>{
+          const a=document.createElement('a');
+          a.className='btn-read';
+          a.href=l.url; a.target='_blank'; a.rel='noopener sponsored';
+          a.textContent=(isFR?'Voir':'View')+' • '+(l.label||'Link');
+          links.appendChild(a);
+        });
+
+        // clic carte (sauf clic sur boutons/liens)
+        card.addEventListener('click',(e)=>{
+          if(e.target.closest('a,button')) return;
+          window.location.href = read.href;
+        });
+
+        FEED.appendChild(node);
       });
-
-      FEED.appendChild(node);
-    });
   }
 
+  // Thème
   BTN_THEME?.addEventListener('click', ()=>{
     document.documentElement.classList.toggle('dark');
     localStorage.setItem('dm_theme', document.documentElement.classList.contains('dark')?'dark':'light');
@@ -77,6 +89,6 @@
   try{ POSTS=await loadPosts(); buildTags(POSTS); render(POSTS); }
   catch(e){ console.error(e); FEED.innerHTML=`<p class="error">Erreur: ${e.message}</p>`; }
 
-  TAGSEL.addEventListener('change',()=>render(POSTS));
-  SEARCH.addEventListener('input',()=>render(POSTS));
+  TAGSEL?.addEventListener('change',()=>render(POSTS));
+  SEARCH?.addEventListener('input',()=>render(POSTS));
 })();
