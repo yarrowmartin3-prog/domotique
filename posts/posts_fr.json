@@ -3,45 +3,28 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Article — Domotique</title>
+  <meta name="description" content="Article détaillé de domotique : guides, sécurité, énergie, HVAC, assistants vocaux.">
 
-  <title>Article — Domotique (FR)</title>
-  <meta name="description" content="Article détaillé de domotique : guides, scènes, sécurité, énergie, HVAC, assistants vocaux.">
-
-  <!-- Canonical / hreflang -->
   <link rel="canonical" href="https://yarrowmartin3-prog.github.io/domotique/post.html">
   <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/post.html" hreflang="fr">
   <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/en/post.html" hreflang="en">
   <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/post.html" hreflang="x-default">
 
-  <!-- OpenGraph / Twitter -->
   <meta property="og:type" content="article">
-  <meta property="og:title" content="Article — Domotique (FR)">
-  <meta property="og:description" content="Article détaillé de domotique : guides, scènes, sécurité, énergie, HVAC, assistants vocaux.">
+  <meta property="og:title" content="Article — Domotique">
+  <meta property="og:description" content="Article domotique détaillé : éclairage, sécurité, énergie, HVAC, assistants vocaux.">
   <meta property="og:image" content="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200">
   <meta property="og:url" content="https://yarrowmartin3-prog.github.io/domotique/post.html">
   <meta property="og:locale" content="fr_CA">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Styles -->
   <link rel="stylesheet" href="./css/auto_content.css"/>
   <link rel="stylesheet" href="./css/pro.css"/>
-
-  <!-- JSON-LD (sera enrichi dynamiquement par JS) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Article — Domotique",
-    "inLanguage": "fr",
-    "url": "https://yarrowmartin3-prog.github.io/domotique/post.html"
-  }
-  </script>
 </head>
 <body>
-  <!-- Bandeau -->
   <div class="banner">🌐 Nom de domaine officiel à venir — restez connectés !</div>
 
-  <!-- Navbar -->
   <nav class="topnav">
     <a class="brand" href="./">🏠 Domotique</a>
     <div class="spacer"></div>
@@ -50,25 +33,6 @@
     <a class="navlink" href="./feed.xml">RSS</a>
   </nav>
 
-  <!-- En-tête -->
   <header class="site-header">
-    <h1 id="post-title">Article</h1>
-    <p class="subtitle"><a href="./">← Retour à l’accueil</a> • <a href="./en/post.html" rel="nofollow">English</a></p>
-  </header>
-
-  <!-- Contenu article -->
-  <main id="post" class="feed" style="max-width:860px;margin:0 auto;padding:0 16px 24px;"></main>
-
-  <!-- Config FR -->
-  <script>
-    window.DM_POST_CFG = {
-      POSTS_URL: "./posts/posts_fr.json",
-      LABELS: { notFound: "Article introuvable", meta: "Publié le" }
-    };
-  </script>
-
-  <!-- Scripts -->
-  <script src="./js/post_page.js"></script>
-  <script src="./js/style_upgrader.js"></script>
-</body>
-</html>
+    <h1 id="post-title">Article Domotique</h1>
+    <p class="subtitle"><a href="./">← Retour à l’accueil</a> • <a href="./en/post
