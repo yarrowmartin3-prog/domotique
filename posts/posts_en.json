@@ -5,8 +5,11 @@
     "date": "2025-09-10",
     "tags": ["lighting", "zigbee"],
     "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200",
-    "summary": "Smooth dimming in the evening.",
-    "body": "Lamp at 30% at 20:00 then 10% at 22:00.\n\nMotion sensor in the hallway for soft night lighting."
+    "summary": "Smooth evening dimming for better comfort.",
+    "body": "Lamp at 30% at 20:00 then 10% at 22:00. Motion sensor in the hallway for soft night lighting.\n\n**Tips**: 400–800 ms transitions, auto-off after 10 min without motion.",
+    "links": [
+      { "label": "Zigbee bulbs (Amazon)", "url": "https://amzn.to/YOUR-AFFILIATE" }
+    ]
   },
   {
     "id": "dm-002",
@@ -14,8 +17,11 @@
     "date": "2025-09-12",
     "tags": ["security", "camera"],
     "image": "https://images.unsplash.com/photo-1591369263562-4c2f7a83e1cb?w=1200",
-    "summary": "Monitor your home with IP cameras.",
-    "body": "Two cameras at the entrance and garden.\n\nMotion detection and mobile notifications."
+    "summary": "Smart detection and push notifications.",
+    "body": "Two IP cameras (entrance, garden). Motion notifications, activity zones, medium sensitivity.",
+    "links": [
+      { "label": "Recommended IP camera", "url": "https://amzn.to/YOUR-AFFILIATE" }
+    ]
   },
   {
     "id": "dm-003",
@@ -23,7 +29,10 @@
     "date": "2025-09-14",
     "tags": ["energy", "tracking"],
     "image": "https://images.unsplash.com/photo-1581091215367-59ab6d62d95e?w=1200",
-    "summary": "Realtime electricity tracking.",
-    "body": "Use smart plugs or Shelly EM. Send to Home Assistant dashboards."
+    "summary": "Realtime electricity tracking made easy.",
+    "body": "Use Shelly EM or Zigbee plugs. Export to Home Assistant dashboards.",
+    "links": [
+      { "label": "Zigbee smart plug", "url": "https://amzn.to/YOUR-AFFILIATE" }
+    ]
   }
 ]
