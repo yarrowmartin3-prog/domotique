@@ -3,7 +3,7 @@
     "id": "tvqledfr01",
     "title": "Samsung Smart TV 2025 — la meilleure pour SmartThings ?",
     "date": "2025-09-12",
-    "tags": ["tv","samsung","smartthings"],
+    "tags": ["tv", "samsung", "smartthings"],
     "image": "https://source.unsplash.com/1280x720/?samsung%20tv%20living%20room&sig=tvqledfr01",
     "summary": "Quels modèles QLED/Neo QLED pour une intégration fluide avec SmartThings.",
     "body": "Conseil — viser QLED/Neo QLED pour salon lumineux. Vérifier la compatibilité SmartThings et les entrées HDMI 2.1 si jeux.",
@@ -15,33 +15,20 @@
     "id": "thermofr02",
     "title": "Nest vs Ecobee : quel thermostat intelligent en 2025 ?",
     "date": "2025-09-12",
-    "tags": ["thermostat","énergie","hvac"],
+    "tags": ["thermostat", "énergie", "hvac"],
     "image": "https://source.unsplash.com/1280x720/?smart%20thermostat&sig=thermofr02",
     "summary": "Comparatif compatibilité, capteurs, économies d’énergie.",
-    "body": "Aperçu — Matter, capteurs, économies. Ecobee brille au Canada (capteur d’occupation); Nest fort sur l’écosystème Google.",
+    "body": "Aperçu — Matter, capteurs, économies. Ecobee brille au Canada; Nest fort sur l’écosystème Google.",
     "links": [
       { "label": "Amazon", "url": "https://www.amazon.ca/s?k=ecobee+smart+thermostat&tag=TON_TAG" },
       { "label": "Amazon", "url": "https://www.amazon.ca/s?k=nest+learning+thermostat&tag=TON_TAG" }
     ]
   },
   {
-    "id": "camerafr03",
-    "title": "Reolink vs TP-Link Tapo : caméras sécurité abordables",
-    "date": "2025-09-12",
-    "tags": ["caméra","sécurité","ip"],
-    "image": "https://source.unsplash.com/1280x720/?security%20camera&sig=camerafr03",
-    "summary": "Comparatif image, détection, stockage local/cloud.",
-    "body": "Aperçu — image, détection personnes, stockage microSD/cloud. Reolink : local-first; Tapo : bon rapport qualité/prix.",
-    "links": [
-      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=reolink+camera&tag=TON_TAG" },
-      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=tp-link+tapo+camera&tag=TON_TAG" }
-    ]
-  },
-  {
     "id": "montresfr04",
     "title": "Top 5 montres intelligentes 2025 — sport & santé",
     "date": "2025-09-12",
-    "tags": ["montre","wearable","santé"],
+    "tags": ["montre", "wearable", "santé"],
     "image": "https://source.unsplash.com/1280x720/?smartwatch&sig=montresfr04",
     "summary": "Comparatif 2025 des montres (fitness, santé, notifications).",
     "body": "**Résumé** — Sélection sport/santé, autonomie, intégration.\n\n1) Apple Watch Series 10\n2) Garmin Forerunner 265\n3) Fitbit Versa 4\n4) Huawei Watch GT 4\n5) VeryFit ID25 (toujours en dernier)",
