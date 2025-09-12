@@ -5,25 +5,34 @@
     "date": "2025-09-10",
     "tags": ["éclairage", "zigbee"],
     "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200",
-    "summary": "Gradation automatique le soir.",
-    "body": "Lampe à 30% à 20h puis 10% à 22h.\n\nUtiliser un détecteur de mouvement dans le couloir pour allumer la lumière en douceur."
+    "summary": "Gradation automatique le soir pour un confort visuel optimal.",
+    "body": "Lampe à 30% à 20h puis 10% à 22h. Utiliser un détecteur de mouvement dans le couloir pour allumer en douceur.\n\n**Astuces** : transition 400–800 ms, extinction auto après 10 min sans mouvement.",
+    "links": [
+      { "label": "Ampoules Zigbee (Amazon)", "url": "https://amzn.to/TON-LIEN-AFFILIE" }
+    ]
   },
   {
     "id": "dm-002",
-    "title": "Sécurité — Caméras IP et alertes",
+    "title": "Sécurité — Caméras IP & alertes",
     "date": "2025-09-12",
     "tags": ["sécurité", "caméra"],
     "image": "https://images.unsplash.com/photo-1591369263562-4c2f7a83e1cb?w=1200",
-    "summary": "Surveillez votre maison avec des caméras IP.",
-    "body": "Installation de 2 caméras IP dans l’entrée et le jardin.\n\nConfiguration avec détection de mouvement et notification mobile."
+    "summary": "Surveillez votre maison avec des détections intelligentes et notifications.",
+    "body": "Deux caméras IP (entrée, jardin). Notifications push lors des détections.\n\n**Astuces** : zones d’activité, sensibilité moyenne, enregistrement sur mouvement.",
+    "links": [
+      { "label": "Caméra IP recommandée", "url": "https://amzn.to/TON-LIEN-AFFILIE" }
+    ]
   },
   {
     "id": "dm-003",
-    "title": "Énergie — Suivi consommation",
+    "title": "Énergie — Suivi de consommation",
     "date": "2025-09-14",
     "tags": ["énergie", "suivi"],
     "image": "https://images.unsplash.com/photo-1581091215367-59ab6d62d95e?w=1200",
-    "summary": "Suivi en temps réel de la consommation électrique.",
-    "body": "Capteurs (Shelly EM, prises Zigbee). Export vers Home Assistant pour graphiques quotidiens."
+    "summary": "Mesurez en temps réel vos dépenses électriques.",
+    "body": "Utiliser Shelly EM ou des prises Zigbee. Export vers Home Assistant pour graphiques quotidiens/hebdo.",
+    "links": [
+      { "label": "Prise connectée Zigbee", "url": "https://amzn.to/TON-LIEN-AFFILIE" }
+    ]
   }
 ]
