@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Domotique — Auto Content</title>
+  <title>Domotique — Auto Content (FR)</title>
   <link rel="stylesheet" href="./css/auto_content.css" />
-  <meta name="description" content="Flux d’articles domotique (éclairage, sécurité, énergie, HVAC, voix).">
+  <meta name="description" content="Flux d’articles domotique en français.">
 </head>
 <body>
   <header class="site-header">
     <h1>Domotique — Auto Content</h1>
     <p class="subtitle">
-      Rendu depuis <code>posts/posts.json</code> •
-      <button id="switchTheme" aria-label="Basculer le thème">Thème</button>
+      Rendu depuis <code>posts/posts_fr.json</code> •
+      <a href="./en/" rel="nofollow">English</a> •
+      <button id="switchTheme">Thème</button>
     </p>
   </header>
 
   <section class="toolbar">
-    <input id="search" type="search" placeholder="Rechercher (ex: zigbee, caméra…)" />
+    <input id="search" type="search" placeholder="Rechercher…" />
     <select id="tagFilter"><option value="">Tous les tags</option></select>
   </section>
 
@@ -35,14 +36,12 @@
     </article>
   </template>
 
-  <footer class="site-footer">
-    <small>Projet Domotique</small>
-  </footer>
+  <footer class="site-footer"><small>Projet Domotique — FR</small></footer>
 
   <script>
     window.DM_CFG = {
-      POSTS_URL: "./posts/posts.json",
-      TEXTS: { noContent: "Aucun contenu. Ajoute des entrées dans posts.json.", noResult: "Aucun résultat." }
+      POSTS_URL: "./posts/posts_fr.json",
+      TEXTS: { noContent: "Aucun contenu. Ajoute des entrées dans posts_fr.json.", noResult: "Aucun résultat." }
     };
   </script>
   <script src="./js/render_posts.js"></script>
