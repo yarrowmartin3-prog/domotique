@@ -4,11 +4,22 @@
     "title": "Zigbee Lighting — Evening Scenes",
     "date": "2025-09-10",
     "tags": ["lighting", "zigbee"],
-    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200",
+    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200&auto=format&fit=crop&q=70",
     "summary": "Smooth evening dimming for better comfort.",
     "body": "Lamp at 30% at 20:00 then 10% at 22:00. Motion sensor in the hallway for soft night lighting.\n\n**Tips**: 400–800 ms transitions, auto-off after 10 min without motion.",
     "links": [
-      { "label": "Zigbee bulbs (Amazon)", "url": "https://amzn.to/YOUR-AFFILIATE" }
+      {
+        "label": "Zigbee bulbs (Amazon.ca search)",
+        "url": "https://www.amazon.ca/s?k=zigbee+bulb&tag=TON_TAG"
+      },
+      {
+        "label": "Zigbee motion sensors (Amazon.ca search)",
+        "url": "https://www.amazon.ca/s?k=aqara+motion+sensor&tag=TON_TAG"
+      },
+      {
+        "label": "Zigbee bulbs (AliExpress search)",
+        "url": "https://www.aliexpress.com/wholesale?SearchText=zigbee+bulb"
+      }
     ]
   },
   {
@@ -16,11 +27,22 @@
     "title": "Security — IP Cameras & Alerts",
     "date": "2025-09-12",
     "tags": ["security", "camera"],
-    "image": "https://images.unsplash.com/photo-1591369263562-4c2f7a83e1cb?w=1200",
+    "image": "https://images.unsplash.com/photo-1591369263562-4c2f7a83e1cb?w=1200&auto=format&fit=crop&q=70",
     "summary": "Smart detection and push notifications.",
     "body": "Two IP cameras (entrance, garden). Motion notifications, activity zones, medium sensitivity.",
     "links": [
-      { "label": "Recommended IP camera", "url": "https://amzn.to/YOUR-AFFILIATE" }
+      {
+        "label": "Reolink cameras (Amazon.ca search)",
+        "url": "https://www.amazon.ca/s?k=reolink+camera&tag=TON_TAG"
+      },
+      {
+        "label": "TP-Link Tapo (Amazon.ca search)",
+        "url": "https://www.amazon.ca/s?k=tapo+camera&tag=TON_TAG"
+      },
+      {
+        "label": "IP cameras (BestBuy.ca search)",
+        "url": "https://www.bestbuy.ca/en-ca/search?search=ip+camera"
+      }
     ]
   },
   {
@@ -28,11 +50,22 @@
     "title": "Energy — Usage Tracking",
     "date": "2025-09-14",
     "tags": ["energy", "tracking"],
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6d62d95e?w=1200",
+    "image": "https://images.unsplash.com/photo-1581091215367-59ab6d62d95e?w=1200&auto=format&fit=crop&q=70",
     "summary": "Realtime electricity tracking made easy.",
-    "body": "Use Shelly EM or Zigbee plugs. Export to Home Assistant dashboards.",
+    "body": "Use Shelly EM or Zigbee plugs. Send metrics to Home Assistant dashboards.",
     "links": [
-      { "label": "Zigbee smart plug", "url": "https://amzn.to/YOUR-AFFILIATE" }
+      {
+        "label": "Shelly EM (Amazon.ca search)",
+        "url": "https://www.amazon.ca/s?k=Shelly+EM&tag=TON_TAG"
+      },
+      {
+        "label": "Energy-monitoring Zigbee plugs (Amazon.ca search)",
+        "url": "https://www.amazon.ca/s?k=zigbee+energy+monitor+plug&tag=TON_TAG"
+      },
+      {
+        "label": "Energy plugs (AliExpress search)",
+        "url": "https://www.aliexpress.com/wholesale?SearchText=zigbee+energy+plug"
+      }
     ]
   }
 ]
