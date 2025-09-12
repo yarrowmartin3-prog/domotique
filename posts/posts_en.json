@@ -3,7 +3,7 @@
     "id": "tven01",
     "title": "Samsung Smart TV 2025 — Best for SmartThings?",
     "date": "2025-09-12",
-    "tags": ["tv","samsung","smartthings"],
+    "tags": ["tv", "samsung", "smartthings"],
     "image": "https://source.unsplash.com/1280x720/?samsung%20tv%20living%20room&sig=tven01",
     "summary": "Which QLED/Neo QLED models for smooth SmartThings integration.",
     "body": "Tip — aim for QLED/Neo QLED in bright rooms. Check SmartThings support and HDMI 2.1 for gaming.",
@@ -15,7 +15,7 @@
     "id": "thermoen02",
     "title": "Nest vs Ecobee: Which Smart Thermostat in 2025?",
     "date": "2025-09-12",
-    "tags": ["thermostat","energy","hvac"],
+    "tags": ["thermostat", "energy", "hvac"],
     "image": "https://source.unsplash.com/1280x720/?smart%20thermostat&sig=thermoen02",
     "summary": "Compare compatibility, sensors, and savings.",
     "body": "Overview — Matter, sensors, savings. Ecobee shines in Canada; Nest integrates tightly with Google.",
@@ -25,23 +25,10 @@
     ]
   },
   {
-    "id": "cameraen03",
-    "title": "Reolink vs TP-Link Tapo: Budget Security Cameras",
-    "date": "2025-09-12",
-    "tags": ["camera","security","ip"],
-    "image": "https://source.unsplash.com/1280x720/?security%20camera&sig=cameraen03",
-    "summary": "Compare image quality, detection and storage.",
-    "body": "Overview — image, person detection, local/cloud storage.",
-    "links": [
-      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=reolink+camera&tag=TON_TAG" },
-      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=tp-link+tapo+camera&tag=TON_TAG" }
-    ]
-  },
-  {
     "id": "watchen04",
     "title": "Top 5 Smartwatches 2025 — Fitness & Health",
     "date": "2025-09-12",
-    "tags": ["watch","wearable","health"],
+    "tags": ["watch", "wearable", "health"],
     "image": "https://source.unsplash.com/1280x720/?smartwatch&sig=watchen04",
     "summary": "2025 smartwatch comparison (fitness, health, notifications).",
     "body": "**Summary** — Fitness/health picks, battery, integration.\n\n1) Apple Watch Series 10\n2) Garmin Forerunner 265\n3) Fitbit Versa 4\n4) Huawei Watch GT 4\n5) VeryFit ID25 (always last)",
