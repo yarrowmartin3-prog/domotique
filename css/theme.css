@@ -1,0 +1,36 @@
+/* theme.css — sera réécrit automatiquement par le workflow saisonnier */
+:root{
+  --bg:#ffffff;
+  --text:#111827;
+  --muted:#6b7280;
+  --card:#ffffff;
+  --border:#e5e7eb;
+  --accent:#2563eb;  /* bleu pro */
+  --accent-2:#22c55e;/* vert domotique */
+  --ring:0 8px 24px rgba(17,24,39,.08);
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1115;
+    --text:#e9eef7;
+    --muted:#9aa7bd;
+    --card:#121621;
+    --border:#1f2737;
+    --accent:#8ab4ff;
+    --accent-2:#34d399;
+    --ring:0 8px 28px rgba(0,0,0,.45);
+  }
+}
+
+/* si l’utilisateur force le mode sombre via bouton (classe .dark) */
+.dark{
+  --bg:#0b0d12;
+  --text:#e9eef7;
+  --muted:#9aa7bd;
+  --card:#121621;
+  --border:#1f2737;
+  --accent:#8ab4ff;
+  --accent-2:#34d399;
+  --ring:0 8px 28px rgba(0,0,0,.45);
+}
