@@ -1,0 +1,43 @@
+import fs from "fs/promises";
+import path from "path";
+
+const ROOT = process.cwd();
+const PAGES = [
+  { file: "index.html", mustHave: ['id="feed"','id="card-tmpl"','id="search"','id="tagFilter"',"render_posts.js"] },
+  { file: "en/index.html", mustHave: ['id="feed"','id="card-tmpl"','id="search"','id="tagFilter"',"render_posts.js"] },
+  { file: "post.html", mustHave: ['id="post"',"post_page.js"] },
+  { file: "en/post.html", mustHave: ['id="post"',"post_page.js"] }
+];
+const FILES = ["js/render_posts.js","js/post_page.js","posts/posts_fr.json","posts/posts_en.json","css/theme.css"];
+const AMAZON_TAG = process.env.AMAZON_TAG || "TON_TAG";
+const ERR=[], WARN=[];
+const ok = m=>console.log("✅",m), bad=m=>{console.error("❌",m);ERR.push(m)}, warn=m=>{console.warn("⚠️",m);WARN.push(m)};
+
+async function mustExist(rel){ try{ await fs.stat(path.join(ROOT,rel)); ok(`Existe: ${rel}`);}catch{ bad(`Manquant: ${rel}`);} }
+async function readText(rel){ try{ return await fs.readFile(path.join(ROOT,rel),"utf8"); }catch{ bad(`Lecture impossible: ${rel}`); return ""; } }
+async function checkPages(){ for(const pg of PAGES){ await mustExist(pg.file); const html=await readText(pg.file); if(!html) continue; for(const n of pg.mustHave){ if(!html.includes(n)) bad(`Dans ${pg.file} : requis manquant → ${n}`); } } }
+const validDate=d=>!!d && !isNaN(Date.parse(d)), validUrl=u=>/^https?:\/\//i.test(u||"");
+async function checkPostsJSON(rel,lang){
+  await mustExist(rel); const raw=await readText(rel); if(!raw) return; let arr=[]; try{ arr=JSON.parse(raw); if(!Array.isArray(arr)) throw new Error("Doit être un tableau"); }catch(e){ bad(`${rel} JSON invalide: ${e.message}`); return; }
+  const ids=new Set();
+  for(const [i,p] of arr.entries()){
+    const loc=`${rel}[${i}]`; if(!p.id){ bad(`${loc}: id manquant`); continue; }
+    if(ids.has(p.id)) bad(`${loc}: id en double (${p.id})`); else ids.add(p.id);
+    if(!p.title) bad(`${loc}: title manquant`);
+    if(!validDate(p.date)) bad(`${loc}: date invalide/absente`);
+    if(!p.summary) warn(`${loc}: summary absent/faible`);
+    if(!validUrl(p.image)) warn(`${loc}: image non-URL`);
+    (p.links||[]).forEach((l,k)=>{ if(!validUrl(l.url)) warn(`${loc}.links[${k}]: url invalide`); if(/amazon\./i.test(l.url) && !/[\?&]tag=/.test(l.url)){ if(AMAZON_TAG==="TON_TAG") warn(`${loc}.links[${k}]: Amazon sans tag (AMAZON_TAG non configuré)`);} });
+    if((p.title||"").match(/(montres|watch).*(top|best|comparatif)/i)){ const body=(p.body||"").toLowerCase(); if(body.includes("veryfit id25")){ const lines=p.body.split("\n").filter(x=>/^\d+\)/.test(x.trim())); if(lines.length>=3 && !/veryfit id25/i.test(lines[lines.length-1])) warn(`${loc}: VeryFit ID25 pas en dernier`); } }
+  }
+  ok(`${rel} : ${arr.length} articles OK (syntaxe)`);
+}
+async function checkStaticFiles(){ for(const f of FILES) await mustExist(f); }
+(async function(){
+  console.log("🔎 Audit…\n");
+  await checkStaticFiles();
+  await checkPages();
+  await checkPostsJSON("posts/posts_fr.json","fr");
+  await checkPostsJSON("posts/posts_en.json","en");
+  console.log(`\nRésumé: erreurs=${ERR.length}, avertissements=${WARN.length}`); if(ERR.length) process.exit(1);
+})().catch(e=>{ console.error(e); process.exit(2); });
