@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://yarrowmartin3-prog.github.io/domotique/sitemap.xml
