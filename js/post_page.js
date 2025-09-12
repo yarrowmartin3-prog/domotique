@@ -1,4 +1,3 @@
-// js/post_page.js
 (function(){
   const cfg = window.DM_POST_CFG || { POSTS_URL:"./posts/posts_fr.json", LABELS:{notFound:"Introuvable",meta:"Publié"}, LANG_SWITCH:"" };
   const main = document.getElementById('post');
