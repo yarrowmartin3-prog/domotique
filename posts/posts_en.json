@@ -4,46 +4,25 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>Article — Home Automation</title>
-  <meta name="description" content="Detailed home automation article: lighting, security, energy, HVAC, voice assistants.">
-
-  <link rel="canonical" href="https://yarrowmartin3-prog.github.io/domotique/en/post.html">
-  <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/" hreflang="fr">
-  <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/en/post.html" hreflang="en">
-  <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/en/post.html" hreflang="x-default">
-
-  <meta property="og:type" content="article">
-  <meta property="og:title" content="Article — Home Automation">
-  <meta property="og:description" content="Detailed home automation article.">
-  <meta property="og:image" content="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200">
-  <meta property="og:url" content="https://yarrowmartin3-prog.github.io/domotique/en/post.html">
-  <meta property="og:locale" content="en_CA">
-  <meta name="twitter:card" content="summary_large_image">
-
+  <meta name="description" content="Detailed home automation article.">
   <link rel="stylesheet" href="../css/auto_content.css"/>
   <link rel="stylesheet" href="../css/pro.css"/>
 </head>
 <body>
-  <div class="banner">🌐 Official domain coming soon — stay tuned!</div>
-
   <nav class="topnav">
     <a class="brand" href="../">🏠 Home Automation</a>
     <div class="spacer"></div>
-    <a class="navlink" href="../">FR</a>
+    <a class="navlink" href="../post.html?id=" id="switchLang">FR</a>
     <a class="navlink" href="./">EN</a>
-    <a class="navlink" href="../feed.xml">RSS</a>
   </nav>
 
-  <header class="site-header">
-    <h1 id="post-title">Home Automation Article</h1>
-    <p class="subtitle"><a href="./">← Back</a> • <a href="../" rel="nofollow">Français</a></p>
-  </header>
-
-  <main id="post" class="feed" style="max-width:860px;margin:0 auto;padding:0 16px 24px;"></main>
+  <main id="post" class="post-container"></main>
 
   <script>
     window.DM_POST_CFG = {
       POSTS_URL: "../posts/posts_en.json",
-      LABELS: { notFound: "Article not found", meta: "Published" }
+      LABELS: { notFound: "Article not found", meta: "Published" },
+      LANG_SWITCH: "../post.html?id="
     };
   </script>
   <script src="../js/post_page.js"></script>
