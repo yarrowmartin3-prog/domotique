@@ -1,71 +1,53 @@
 [
   {
-    "id": "dm-001",
-    "title": "Éclairage Zigbee — scènes soirée",
-    "date": "2025-09-10",
-    "tags": ["éclairage", "zigbee"],
-    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200&auto=format&fit=crop&q=70",
-    "summary": "Gradation automatique le soir pour un confort visuel optimal.",
-    "body": "Lampe à 30% à 20h puis 10% à 22h. Détecteur de mouvement dans le couloir pour allumer en douceur.\n\n**Astuces** : transition 400–800 ms, extinction auto après 10 min sans mouvement.",
-    "links": [
-      {
-        "label": "Ampoules Zigbee (Philips Hue, recherche Amazon.ca)",
-        "url": "https://www.amazon.ca/s?k=philips+hue+white+bulb+e26&tag=TON_TAG"
-      },
-      {
-        "label": "Prises connectées Zigbee (recherche Amazon.ca)",
-        "url": "https://www.amazon.ca/s?k=zigbee+smart+plug&tag=TON_TAG"
-      },
-      {
-        "label": "Ampoules Zigbee (recherche AliExpress)",
-        "url": "https://www.aliexpress.com/wholesale?SearchText=zigbee+bulb"
-      }
-    ]
-  },
-  {
-    "id": "dm-002",
-    "title": "Sécurité — Caméras IP & alertes",
+    "id": "tvqledfr01",
+    "title": "Samsung Smart TV 2025 — la meilleure pour SmartThings ?",
     "date": "2025-09-12",
-    "tags": ["sécurité", "caméra"],
-    "image": "https://images.unsplash.com/photo-1591369263562-4c2f7a83e1cb?w=1200&auto=format&fit=crop&q=70",
-    "summary": "Surveillez votre maison avec des détections intelligentes et notifications.",
-    "body": "Deux caméras IP (entrée, jardin). Notifications push, zones d’activité, sensibilité moyenne.\n\n**Astuces** : stockage local + cloud, alertes uniquement sur personnes.",
+    "tags": ["tv","samsung","smartthings"],
+    "image": "https://source.unsplash.com/1280x720/?samsung%20tv%20living%20room&sig=tvqledfr01",
+    "summary": "Quels modèles QLED/Neo QLED pour une intégration fluide avec SmartThings.",
+    "body": "Conseil — viser QLED/Neo QLED pour salon lumineux. Vérifier la compatibilité SmartThings et les entrées HDMI 2.1 si jeux.",
     "links": [
-      {
-        "label": "Caméras Reolink (recherche Amazon.ca)",
-        "url": "https://www.amazon.ca/s?k=reolink+camera&tag=TON_TAG"
-      },
-      {
-        "label": "TP-Link Tapo (recherche Amazon.ca)",
-        "url": "https://www.amazon.ca/s?k=tp-link+tapo+camera&tag=TON_TAG"
-      },
-      {
-        "label": "Caméras IP (recherche BestBuy.ca)",
-        "url": "https://www.bestbuy.ca/en-ca/search?search=ip+camera"
-      }
+      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=samsung+smart+tv+qled&tag=TON_TAG" }
     ]
   },
   {
-    "id": "dm-003",
-    "title": "Énergie — Suivi de consommation",
-    "date": "2025-09-14",
-    "tags": ["énergie", "suivi"],
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6d62d95e?w=1200&auto=format&fit=crop&q=70",
-    "summary": "Mesurez en temps réel vos dépenses électriques.",
-    "body": "Utiliser Shelly EM ou des prises Zigbee. Export vers Home Assistant pour graphiques.",
+    "id": "thermofr02",
+    "title": "Nest vs Ecobee : quel thermostat intelligent en 2025 ?",
+    "date": "2025-09-12",
+    "tags": ["thermostat","énergie","hvac"],
+    "image": "https://source.unsplash.com/1280x720/?smart%20thermostat&sig=thermofr02",
+    "summary": "Comparatif compatibilité, capteurs, économies d’énergie.",
+    "body": "Aperçu — Matter, capteurs, économies. Ecobee brille au Canada (capteur d’occupation); Nest fort sur l’écosystème Google.",
     "links": [
-      {
-        "label": "Shelly EM (recherche Amazon.ca)",
-        "url": "https://www.amazon.ca/s?k=Shelly+EM&tag=TON_TAG"
-      },
-      {
-        "label": "Prises Zigbee mesurant l’énergie (Amazon.ca)",
-        "url": "https://www.amazon.ca/s?k=zigbee+energy+monitor+plug&tag=TON_TAG"
-      },
-      {
-        "label": "Capteur conso (recherche AliExpress)",
-        "url": "https://www.aliexpress.com/wholesale?SearchText=zigbee+power+monitor+plug"
-      }
+      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=ecobee+smart+thermostat&tag=TON_TAG" },
+      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=nest+learning+thermostat&tag=TON_TAG" }
+    ]
+  },
+  {
+    "id": "camerafr03",
+    "title": "Reolink vs TP-Link Tapo : caméras sécurité abordables",
+    "date": "2025-09-12",
+    "tags": ["caméra","sécurité","ip"],
+    "image": "https://source.unsplash.com/1280x720/?security%20camera&sig=camerafr03",
+    "summary": "Comparatif image, détection, stockage local/cloud.",
+    "body": "Aperçu — image, détection personnes, stockage microSD/cloud. Reolink : local-first; Tapo : bon rapport qualité/prix.",
+    "links": [
+      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=reolink+camera&tag=TON_TAG" },
+      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=tp-link+tapo+camera&tag=TON_TAG" }
+    ]
+  },
+  {
+    "id": "montresfr04",
+    "title": "Top 5 montres intelligentes 2025 — sport & santé",
+    "date": "2025-09-12",
+    "tags": ["montre","wearable","santé"],
+    "image": "https://source.unsplash.com/1280x720/?smartwatch&sig=montresfr04",
+    "summary": "Comparatif 2025 des montres (fitness, santé, notifications).",
+    "body": "**Résumé** — Sélection sport/santé, autonomie, intégration.\n\n1) Apple Watch Series 10\n2) Garmin Forerunner 265\n3) Fitbit Versa 4\n4) Huawei Watch GT 4\n5) VeryFit ID25 (toujours en dernier)",
+    "links": [
+      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=smartwatch&tag=TON_TAG" },
+      { "label": "Amazon", "url": "https://www.amazon.ca/s?k=veryfit+id25&tag=TON_TAG" }
     ]
   }
 ]
