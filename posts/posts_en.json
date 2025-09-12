@@ -1,47 +1,52 @@
-[
-  {
-    "id": "dm-001-en",
-    "title": "Zigbee lighting — evening scenes",
-    "date": "2025-09-10",
-    "tags": ["lighting","zigbee"],
-    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200",
-    "summary": "Automatic evening dimming.",
-    "body": "Lights at 30% at 8PM then 10% at 10PM."
-  },
-  {
-    "id": "dm-002-en",
-    "title": "IP camera — motion detection",
-    "date": "2025-09-11",
-    "tags": ["security","camera","ip"],
-    "image": "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=1200",
-    "summary": "Notifications + 10s clip to NAS.",
-    "body": "70% detection zone, medium sensitivity, night schedule."
-  },
-  {
-    "id": "dm-003-en",
-    "title": "MQTT energy meter",
-    "date": "2025-09-12",
-    "tags": ["energy","mqtt","dashboard"],
-    "image": "https://images.unsplash.com/photo-1560272564-c83b66b1ad12?w=1200",
-    "summary": "kWh by room + spike alerts >1200W.",
-    "body": "Normalized topics, daily & weekly charts."
-  },
-  {
-    "id": "dm-004-en",
-    "title": "Smart thermostat + CO₂",
-    "date": "2025-09-13",
-    "tags": ["hvac","co2","comfort"],
-    "image": "https://images.unsplash.com/photo-1511436656560-14c61f07e9b4?w=1200",
-    "summary": "21°C daytime, 18.5°C night, boost fan >1000 ppm.",
-    "body": "Open window = heating pause 15 min."
-  },
-  {
-    "id": "dm-005-en",
-    "title": "‘I’m leaving’ voice scene",
-    "date": "2025-09-14",
-    "tags": ["voice","automations","scenes"],
-    "image": "https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=1200",
-    "summary": "Lights off, lock, alarm armed, eco mode.",
-    "body": "FR/EN aliases, spoken confirmation."
-  }
-]
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Article — Home Automation</title>
+  <meta name="description" content="Detailed home automation article: lighting, security, energy, HVAC, voice assistants.">
+
+  <link rel="canonical" href="https://yarrowmartin3-prog.github.io/domotique/en/post.html">
+  <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/" hreflang="fr">
+  <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/en/post.html" hreflang="en">
+  <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/en/post.html" hreflang="x-default">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Article — Home Automation">
+  <meta property="og:description" content="Detailed home automation article.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200">
+  <meta property="og:url" content="https://yarrowmartin3-prog.github.io/domotique/en/post.html">
+  <meta property="og:locale" content="en_CA">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="stylesheet" href="../css/auto_content.css"/>
+  <link rel="stylesheet" href="../css/pro.css"/>
+</head>
+<body>
+  <div class="banner">🌐 Official domain coming soon — stay tuned!</div>
+
+  <nav class="topnav">
+    <a class="brand" href="../">🏠 Home Automation</a>
+    <div class="spacer"></div>
+    <a class="navlink" href="../">FR</a>
+    <a class="navlink" href="./">EN</a>
+    <a class="navlink" href="../feed.xml">RSS</a>
+  </nav>
+
+  <header class="site-header">
+    <h1 id="post-title">Home Automation Article</h1>
+    <p class="subtitle"><a href="./">← Back</a> • <a href="../" rel="nofollow">Français</a></p>
+  </header>
+
+  <main id="post" class="feed" style="max-width:860px;margin:0 auto;padding:0 16px 24px;"></main>
+
+  <script>
+    window.DM_POST_CFG = {
+      POSTS_URL: "../posts/posts_en.json",
+      LABELS: { notFound: "Article not found", meta: "Published" }
+    };
+  </script>
+  <script src="../js/post_page.js"></script>
+  <script src="../js/style_upgrader.js"></script>
+</body>
+</html>
