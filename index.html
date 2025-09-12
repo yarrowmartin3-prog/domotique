@@ -1,8 +1,6 @@
 <!doctype html>
 <html lang="fr">
 <head>
-  <link rel="stylesheet" href="./css/theme.css" />
-<link rel="stylesheet" href="./css/pro.css" />
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Domotique — Guides & Astuces</title>
@@ -10,34 +8,43 @@
   <link rel="canonical" href="https://yarrowmartin3-prog.github.io/domotique/">
   <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/" hreflang="fr">
   <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/en/" hreflang="en">
-  <link rel="stylesheet" href="./css/auto_content.css" />
+
+  <!-- Styles pro + thème auto -->
+  <link rel="stylesheet" href="./css/theme.css" />
   <link rel="stylesheet" href="./css/pro.css" />
 </head>
 <body>
-  <div class="banner">🌐 Nom de domaine officiel à venir — restez connectés !</div>
+  <div class="banner">🌟 Astuces domotique • Éclairage • Sécurité • Énergie</div>
 
   <nav class="topnav">
     <a class="brand" href="./">🏠 Domotique</a>
     <div class="spacer"></div>
     <a class="navlink" href="./">FR</a>
     <a class="navlink" href="./en/">EN</a>
-    <a class="navlink" href="./feed.xml">RSS</a>
   </nav>
 
   <header class="site-header header-gradient">
-    <h1>Domotique — Guides & Astuces</h1>
-    <p class="subtitle">Conseils pour l’éclairage, la sécurité, l’énergie et le confort.
-      <button id="switchTheme">Thème</button>
-    </p>
+    <div class="main-wrap">
+      <h1>Domotique — Guides & Astuces</h1>
+      <p class="subtitle">
+        Conseils pratiques pour l’éclairage, la sécurité, l’énergie et le confort.
+        <button id="switchTheme" type="button">Thème</button>
+      </p>
+    </div>
   </header>
 
-  <section class="toolbar sticky-toolbar">
-    <input id="search" type="search" placeholder="Rechercher…" aria-label="Recherche" />
-    <select id="tagFilter" aria-label="Filtrer par tag"><option value="">Tous les tags</option></select>
+  <section class="toolbar">
+    <div class="main-wrap" style="display:flex;gap:12px">
+      <input id="search" type="search" placeholder="Rechercher…" aria-label="Recherche" />
+      <select id="tagFilter" aria-label="Filtrer par tag"><option value="">Tous les tags</option></select>
+    </div>
   </section>
 
-  <main id="feed" class="feed" aria-live="polite"></main>
+  <main class="main-wrap">
+    <section id="feed" class="feed" aria-live="polite"></section>
+  </main>
 
+  <!-- Modèle de carte (cloné par JS) -->
   <template id="card-tmpl">
     <article class="card">
       <img class="thumb" alt="" loading="lazy" decoding="async" />
@@ -50,15 +57,20 @@
     </article>
   </template>
 
-  <footer class="site-footer"><small>&copy; Domotique — Guides & Astuces</small></footer>
+  <footer class="main-wrap" style="padding:24px 16px">
+    <small class="muted">© Domotique — Guides & Astuces • FR</small>
+  </footer>
 
+  <!-- Config de la page (FR) -->
   <script>
     window.DM_CFG = {
       POSTS_URL: "./posts/posts_fr.json",
       TEXTS: { noContent: "Aucun contenu.", noResult: "Aucun résultat." }
     };
   </script>
-  <script src="./js/render_posts.js"></script>
+
+  <!-- Scripts -->
   <script src="./js/style_upgrader.js"></script>
+  <script src="./js/render_posts.js"></script>
 </body>
 </html>
