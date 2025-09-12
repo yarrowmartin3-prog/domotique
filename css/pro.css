@@ -1,4 +1,12 @@
-/* Pro theme add-on */
+
+.banner {
+  background: linear-gradient(90deg, #3b82f6, #22c55e);
+  color: #fff;
+  text-align: center;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-weight: 600;
+}/* Pro theme add-on */
 :root {
   --radius: 18px;
   --shadow: 0 6px 24px rgba(0,0,0,.08);
