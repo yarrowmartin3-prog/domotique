@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Domotique — Auto Content</title>
+  <link rel="stylesheet" href="./css/auto_content.css" />
+  <meta name="description" content="Flux d’articles domotique (éclairage, sécurité, énergie, HVAC, voix).">
+</head>
+<body>
+  <header class="site-header">
+    <h1>Domotique — Auto Content</h1>
+    <p class="subtitle">
+      Rendu depuis <code>posts/posts.json</code> •
+      <button id="switchTheme" aria-label="Basculer le thème">Thème</button>
+    </p>
+  </header>
+
+  <section class="toolbar">
+    <input id="search" type="search" placeholder="Rechercher (ex: zigbee, caméra…)" />
+    <select id="tagFilter"><option value="">Tous les tags</option></select>
+  </section>
+
+  <main id="feed" class="feed" aria-live="polite"></main>
+
+  <template id="card-tmpl">
+    <article class="card">
+      <img class="thumb" alt="" />
+      <div class="card-body">
+        <h3 class="title"></h3>
+        <p class="meta"></p>
+        <p class="summary"></p>
+        <div class="links"></div>
+      </div>
+    </article>
+  </template>
+
+  <footer class="site-footer">
+    <small>Projet Domotique</small>
+  </footer>
+
+  <script>
+    window.DM_CFG = {
+      POSTS_URL: "./posts/posts.json",
+      TEXTS: { noContent: "Aucun contenu. Ajoute des entrées dans posts.json.", noResult: "Aucun résultat." }
+    };
+  </script>
+  <script src="./js/render_posts.js"></script>
+</body>
+</html>
