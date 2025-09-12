@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+<channel>
+  <title>Domotique — Flux</title>
+  <link>https://yarrowmartin3-prog.github.io/domotique/</link>
+  <description>Articles domotique</description>
+
+  <!-- Duplique ces <item> pour tes posts -->
+  <item>
+    <title>Éclairage Zigbee — scènes soirée</title>
+    <link>https://yarrowmartin3-prog.github.io/domotique/</link>
+    <description>Gradation automatique le soir.</description>
+    <pubDate>Mon, 10 Sep 2025 10:00:00 GMT</pubDate>
+  </item>
+</channel>
+</rss>
