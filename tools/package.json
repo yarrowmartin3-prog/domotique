@@ -1,14 +1,19 @@
 {
-  "name": "domotique-refresh-tools",
-  "private": true,
+  "name": "domotique",
+  "version": "1.0.0",
   "type": "module",
-  "dependencies": {
-    "node-fetch": "^3.3.2",
-    "rss-parser": "^3.13.0",
-    "turndown": "^7.2.0",
-    "prettier": "^3.3.3"
-  },
+  "private": true,
   "scripts": {
-    "refresh": "node refresh_content.mjs"
+    "dev": "npx http-server . -p 8080 -c-1",
+    "posts:fix": "node tools/update_current_posts.mjs",
+    "refresh:niche": "node tools/generate_niche_articles.mjs",
+    "refresh:rss": "node tools/refresh_content.mjs",
+    "refresh:all": "npm run posts:fix && npm run refresh:niche && npm run refresh:rss"
+  },
+  "dependencies": {
+    "rss-parser": "^3.13.0"
+  },
+  "devDependencies": {
+    "http-server": "^14.1.1"
   }
 }
