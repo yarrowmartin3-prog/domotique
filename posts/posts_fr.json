@@ -4,11 +4,22 @@
     "title": "Éclairage Zigbee — scènes soirée",
     "date": "2025-09-10",
     "tags": ["éclairage", "zigbee"],
-    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200",
+    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200&auto=format&fit=crop&q=70",
     "summary": "Gradation automatique le soir pour un confort visuel optimal.",
-    "body": "Lampe à 30% à 20h puis 10% à 22h. Utiliser un détecteur de mouvement dans le couloir pour allumer en douceur.\n\n**Astuces** : transition 400–800 ms, extinction auto après 10 min sans mouvement.",
+    "body": "Lampe à 30% à 20h puis 10% à 22h. Détecteur de mouvement dans le couloir pour allumer en douceur.\n\n**Astuces** : transition 400–800 ms, extinction auto après 10 min sans mouvement.",
     "links": [
-      { "label": "Ampoules Zigbee (Amazon)", "url": "https://amzn.to/TON-LIEN-AFFILIE" }
+      {
+        "label": "Ampoules Zigbee (Philips Hue, recherche Amazon.ca)",
+        "url": "https://www.amazon.ca/s?k=philips+hue+white+bulb+e26&tag=TON_TAG"
+      },
+      {
+        "label": "Prises connectées Zigbee (recherche Amazon.ca)",
+        "url": "https://www.amazon.ca/s?k=zigbee+smart+plug&tag=TON_TAG"
+      },
+      {
+        "label": "Ampoules Zigbee (recherche AliExpress)",
+        "url": "https://www.aliexpress.com/wholesale?SearchText=zigbee+bulb"
+      }
     ]
   },
   {
@@ -16,11 +27,22 @@
     "title": "Sécurité — Caméras IP & alertes",
     "date": "2025-09-12",
     "tags": ["sécurité", "caméra"],
-    "image": "https://images.unsplash.com/photo-1591369263562-4c2f7a83e1cb?w=1200",
+    "image": "https://images.unsplash.com/photo-1591369263562-4c2f7a83e1cb?w=1200&auto=format&fit=crop&q=70",
     "summary": "Surveillez votre maison avec des détections intelligentes et notifications.",
-    "body": "Deux caméras IP (entrée, jardin). Notifications push lors des détections.\n\n**Astuces** : zones d’activité, sensibilité moyenne, enregistrement sur mouvement.",
+    "body": "Deux caméras IP (entrée, jardin). Notifications push, zones d’activité, sensibilité moyenne.\n\n**Astuces** : stockage local + cloud, alertes uniquement sur personnes.",
     "links": [
-      { "label": "Caméra IP recommandée", "url": "https://amzn.to/TON-LIEN-AFFILIE" }
+      {
+        "label": "Caméras Reolink (recherche Amazon.ca)",
+        "url": "https://www.amazon.ca/s?k=reolink+camera&tag=TON_TAG"
+      },
+      {
+        "label": "TP-Link Tapo (recherche Amazon.ca)",
+        "url": "https://www.amazon.ca/s?k=tp-link+tapo+camera&tag=TON_TAG"
+      },
+      {
+        "label": "Caméras IP (recherche BestBuy.ca)",
+        "url": "https://www.bestbuy.ca/en-ca/search?search=ip+camera"
+      }
     ]
   },
   {
@@ -28,11 +50,22 @@
     "title": "Énergie — Suivi de consommation",
     "date": "2025-09-14",
     "tags": ["énergie", "suivi"],
-    "image": "https://images.unsplash.com/photo-1581091215367-59ab6d62d95e?w=1200",
+    "image": "https://images.unsplash.com/photo-1581091215367-59ab6d62d95e?w=1200&auto=format&fit=crop&q=70",
     "summary": "Mesurez en temps réel vos dépenses électriques.",
-    "body": "Utiliser Shelly EM ou des prises Zigbee. Export vers Home Assistant pour graphiques quotidiens/hebdo.",
+    "body": "Utiliser Shelly EM ou des prises Zigbee. Export vers Home Assistant pour graphiques.",
     "links": [
-      { "label": "Prise connectée Zigbee", "url": "https://amzn.to/TON-LIEN-AFFILIE" }
+      {
+        "label": "Shelly EM (recherche Amazon.ca)",
+        "url": "https://www.amazon.ca/s?k=Shelly+EM&tag=TON_TAG"
+      },
+      {
+        "label": "Prises Zigbee mesurant l’énergie (Amazon.ca)",
+        "url": "https://www.amazon.ca/s?k=zigbee+energy+monitor+plug&tag=TON_TAG"
+      },
+      {
+        "label": "Capteur conso (recherche AliExpress)",
+        "url": "https://www.aliexpress.com/wholesale?SearchText=zigbee+power+monitor+plug"
+      }
     ]
   }
 ]
