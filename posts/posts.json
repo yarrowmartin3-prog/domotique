@@ -1,0 +1,30 @@
+[
+  {
+    "id": "dm-001",
+    "title": "Éclairage Zigbee — scènes soirée",
+    "date": "2025-09-10",
+    "tags": ["éclairage","zigbee"],
+    "image": "https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=800",
+    "summary": "Gradation automatique le soir.",
+    "body": "Les lampes passent à 30% à 20h puis 10% à 22h.",
+    "links": [{"label":"CFG scènes","url":"https://example.com/scenes-zigbee"}]
+  },
+  {
+    "id": "dm-002",
+    "title": "Caméra IP — détection mouvement",
+    "date": "2025-09-11",
+    "tags": ["sécurité","caméra","ip"],
+    "image": "https://images.unsplash.com/photo-1557324232-b8917d3c3dcb?w=800",
+    "summary": "Notifications + clip 10s vers NAS.",
+    "body": "Zone 70%, sensibilité moyenne, horaire nuit."
+  },
+  {
+    "id": "dm-003",
+    "title": "Suivi énergie — prises connectées",
+    "date": "2025-09-12",
+    "tags": ["énergie","mqtt"],
+    "image": "https://images.unsplash.com/photo-1564325724739-bae0bd08762a?w=800",
+    "summary": "Puissance instantanée via MQTT → dashboard.",
+    "body": "Alerte >1200W, coupe automatique en absence."
+  }
+]
