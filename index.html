@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
 
   <title>Domotique — Guides & Astuces</title>
-  <meta name="description" content="Domotique en français : éclairage, sécurité, énergie, HVAC et assistants vocaux. Guides, astuces, scènes et tableaux de bord.">
+  <meta name="description" content="Domotique en français : éclairage, sécurité, énergie, HVAC et assistants vocaux. Guides, astuces, scènes et dashboards.">
 
   <link rel="canonical" href="https://yarrowmartin3-prog.github.io/domotique/">
   <link rel="alternate" href="https://yarrowmartin3-prog.github.io/domotique/" hreflang="fr">
@@ -23,6 +23,10 @@
 
   <link rel="stylesheet" href="./css/auto_content.css" />
   <link rel="stylesheet" href="./css/pro.css" />
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"Domotique — Guides & Astuces","url":"https://yarrowmartin3-prog.github.io/domotique/","inLanguage":"fr"}
+  </script>
 </head>
 <body>
   <div class="banner">🌐 Nom de domaine officiel à venir — restez connectés !</div>
@@ -35,18 +39,17 @@
     <a class="navlink" href="./feed.xml">RSS</a>
   </nav>
 
-  <header class="site-header">
-    <h1>Domotique</h1>
+  <header class="site-header header-gradient">
+    <h1>Domotique — Guides & Astuces</h1>
     <p class="subtitle">
-      Articles depuis <code>posts/posts_fr.json</code> •
-      <a href="./en/" rel="nofollow">English</a> •
+      Conseils pratiques pour l’éclairage, la sécurité, l’énergie et le confort.
       <button id="switchTheme">Thème</button>
     </p>
   </header>
 
-  <section class="toolbar">
-    <input id="search" type="search" placeholder="Rechercher…" />
-    <select id="tagFilter"><option value="">Tous les tags</option></select>
+  <section class="toolbar sticky-toolbar">
+    <input id="search" type="search" placeholder="Rechercher…" aria-label="Recherche" />
+    <select id="tagFilter" aria-label="Filtrer par tag"><option value="">Tous les tags</option></select>
   </section>
 
   <main id="feed" class="feed" aria-live="polite"></main>
@@ -63,15 +66,13 @@
     </article>
   </template>
 
-  <footer class="site-footer"><small>Projet Domotique — FR</small></footer>
+  <footer class="site-footer"><small>&copy; Domotique — Guides & Astuces</small></footer>
 
+  <!-- Config non visible (FR) -->
   <script>
     window.DM_CFG = {
       POSTS_URL: "./posts/posts_fr.json",
-      TEXTS: {
-        noContent: "Aucun contenu. Ajoute des entrées dans posts_fr.json.",
-        noResult: "Aucun résultat."
-      }
+      TEXTS: { noContent: "Aucun contenu.", noResult: "Aucun résultat." }
     };
   </script>
   <script src="./js/render_posts.js"></script>
