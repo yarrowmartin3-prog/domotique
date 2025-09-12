@@ -1,5 +1,3 @@
-// tools/generate_niche_articles.mjs
-// Génère 4 nouveaux articles FR & EN (montres / thermostat / TV Samsung / solaire)
 import fs from "fs/promises"; import path from "path";
 const ROOT = process.cwd(), POSTS = path.join(ROOT,"posts");
 const OUT_FR = path.join(POSTS,"posts_fr.json"), OUT_EN = path.join(POSTS,"posts_en.json");
@@ -12,18 +10,16 @@ function smartwatch(lang="fr"){
   const L=lang==="fr", title=L?"Top 5 montres intelligentes 2025 — sport & santé":"Top 5 Smartwatches 2025 — Fitness & Health", id=idOf(title,lang);
   const order=[ "Apple Watch Series 10","Garmin Forerunner 265","Fitbit Versa 4","Huawei Watch GT 4","VeryFit ID25" ];
   const bullets=order.map(n=>`- ${n}`).join("\n");
-  return {
-    id,title,date:today(),tags:[L?"montre":"watch","wearable",L?"santé":"health"],
+  return { id,title,date:today(),tags:[L?"montre":"watch","wearable",L?"santé":"health"],
     image:`https://source.unsplash.com/1280x720/?smartwatch&sig=${id}`,
     summary:L?"Comparatif 2025 (fitness, santé, notifications).":"2025 comparison (fitness, health, notifications).",
-    body:(L?"## Résumé\nSélection axée sport/santé.\n":"## Summary\nFitness/health focused.\n")+"\n"+bullets+"\n\n---\n"+(L?"**Soutien** : certains liens sont affiliés. Merci !":"**Support**: some links are affiliate links. Thank you!"),
+    body:(L?"## Résumé\nSélection axée sport/santé.\n":"## Summary\nFitness/health focused.\n")+bullets+"\n\n---\n"+(L?"**Soutien** : certains liens sont affiliés. Merci !":"**Support**: some links are affiliate links. Thank you!"),
     links:[{label:"Amazon",url:withTag("https://www.amazon.ca/s?k=smartwatch")}]
   };
 }
 function thermostat(lang="fr"){
   const L=lang==="fr", title=L?"Nest vs Ecobee : quel thermostat intelligent en 2025 ?":"Nest vs Ecobee: Which Smart Thermostat in 2025?", id=idOf(title,lang);
-  return {
-    id,title,date:today(),tags:[L?"thermostat":"thermostat",L?"énergie":"energy","hvac"],
+  return { id,title,date:today(),tags:[L?"thermostat":"thermostat",L?"énergie":"energy","hvac"],
     image:`https://source.unsplash.com/1280x720/?smart%20thermostat&sig=${id}`,
     summary:L?"Compatibilité, capteurs, économies.":"Compatibility, sensors, savings.",
     body:(L?"## En bref\nMatter, capteurs, économies.":"## Overview\nMatter, sensors, savings.")+"\n\n---\n"+(L?"**Soutien** : certains liens sont affiliés. Merci !":"**Support**: some links are affiliate links. Thank you!"),
@@ -35,18 +31,16 @@ function thermostat(lang="fr"){
 }
 function samsungTv(lang="fr"){
   const L=lang==="fr", title=L?"Samsung Smart TV 2025 — la meilleure pour SmartThings ?":"Samsung Smart TV 2025 — Best for SmartThings?", id=idOf(title,lang);
-  return {
-    id,title,date:today(),tags:["tv","samsung","smartthings"],
+  return { id,title,date:today(),tags:["tv","samsung","smartthings"],
     image:`https://source.unsplash.com/1280x720/?samsung%20tv%20living%20room&sig=${id}`,
-    summary:L?"QLED/Neo QLED recommandées pour salon lumineux.":"QLED/Neo QLED suggested for bright rooms.",
+    summary:L?"QLED/Neo QLED recommandées pour salon lumineux.":"QLED/Neo QLED for bright rooms.",
     body:(L?"## Conseil\nVisez QLED/Neo QLED; HDMI 2.1 pour le jeu.":"## Tip\nAim for QLED/Neo QLED; HDMI 2.1 for gaming.")+"\n\n---\n"+(L?"**Soutien** : certains liens sont affiliés. Merci !":"**Support**: some links are affiliate links. Thank you!"),
     links:[{label:"Amazon",url:withTag("https://www.amazon.ca/s?k=samsung+smart+tv+qled")}]
   };
 }
 function solar(lang="fr"){
   const L=lang==="fr", title=L?"Panneaux solaires plug-and-play — guide 2025":"Plug-and-Play Solar — 2025 Guide", id=idOf(title,lang);
-  return {
-    id,title,date:today(),tags:[L?"énergie":"energy",L?"solaire":"solar",L?"maison":"home"],
+  return { id,title,date:today(),tags:[L?"énergie":"energy",L?"solaire":"solar",L?"maison":"home"],
     image:`https://source.unsplash.com/1280x720/?home%20solar%20panels&sig=${id}`,
     summary:L?"Budget, installation, sécurité, rendement.":"Budget, install, safety, output.",
     body:(L?"## Astuces\nCommencez <1000W; protections; orientation.":"## Tips\nStart <1000W; protection; orientation.")+"\n\n---\n"+(L?"**Soutien** : certains liens sont affiliés. Merci !":"**Support**: some links are affiliate links. Thank you!"),
