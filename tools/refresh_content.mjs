@@ -1,5 +1,3 @@
-// tools/refresh_content.mjs
-// Récupère des actu domotique via RSS et ajoute 1–2 liens affiliés pertinents.
 import Parser from "rss-parser"; import fs from "fs/promises"; import path from "path";
 const ROOT=process.cwd(), POSTS=path.join(ROOT,"posts"), OUT_FR=path.join(POSTS,"posts_fr.json"), OUT_EN=path.join(POSTS,"posts_en.json");
 const AMAZON_TAG = process.env.AMAZON_TAG || "TON_TAG";
@@ -8,7 +6,6 @@ const SOURCES = {
   fr: ["https://www.maison-et-domotique.com/feed/","https://jeedom.com/blog/index.php/feed/","https://blog.domadoo.fr/feed/","https://www.lesnumeriques.com/rss.xml","https://www.frandroid.com/feed"],
   en: ["https://www.home-assistant.io/atom.xml","https://www.techradar.com/rss/smart-home","https://www.cnet.com/tech/home/rss/","https://www.digitaltrends.com/home/feed/"]
 };
-const FALLBACK="https://images.unsplash.com/photo-1550989460-0adf9ea622e2?w=1200&auto=format&fit=crop&q=70";
 const P=new Parser();
 const sum=(txt,n=220)=> (txt||"").replace(/<[^>]+>/g," ").replace(/\s+/g," ").trim().slice(0,n)+(txt&&txt.length>n?"…":"");
 const img=(title,id)=>{ const s=(title||"").toLowerCase(); let q="smart home";
@@ -21,15 +18,9 @@ const linksFor=(title,tags,lang)=>{ const s=(title+" "+(tags||[]).join(" ")).toL
     {label:"Amazon",url:withTag("https://www.amazon.ca/s?k=ecobee+smart+thermostat")},
     {label:"Amazon",url:withTag("https://www.amazon.ca/s?k=nest+learning+thermostat")}
   ];
-  if(s.includes("camera")||s.includes("caméra")) return [
-    {label:"Amazon",url:withTag("https://www.amazon.ca/s?k=reolink+camera")}
-  ];
-  if(s.includes("watch")||s.includes("montre")||s.includes("veryfit")) return [
-    {label:"Amazon",url:withTag("https://www.amazon.ca/s?k=veryfit+id25")}
-  ];
-  if(s.includes("solar")||s.includes("solaire")) return [
-    {label:"Amazon",url:withTag("https://www.amazon.ca/s?k=solar+panel+kit+home")}
-  ];
+  if(s.includes("camera")||s.includes("caméra")) return [{label:"Amazon",url:withTag("https://www.amazon.ca/s?k=reolink+camera")}];
+  if(s.includes("watch")||s.includes("montre")||s.includes("veryfit")) return [{label:"Amazon",url:withTag("https://www.amazon.ca/s?k=veryfit+id25")}];
+  if(s.includes("solar")||s.includes("solaire")) return [{label:"Amazon",url:withTag("https://www.amazon.ca/s?k=solar+panel+kit+home")}];
   return [{label:"Amazon",url:withTag("https://www.amazon.ca/s?k=smart+home")}];
 };
 const toId=(s,lang)=> Buffer.from((s||"")+lang).toString("base64").replace(/[^a-z0-9]/gi,"").slice(0,10) || (Date.now()+"").slice(-10);
