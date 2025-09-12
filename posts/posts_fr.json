@@ -5,8 +5,8 @@
     "date": "2025-09-12",
     "tags": ["tv", "samsung", "smartthings"],
     "image": "https://source.unsplash.com/1280x720/?samsung%20tv%20living%20room&sig=tvqledfr01",
-    "summary": "Quels modèles QLED/Neo QLED pour une intégration fluide avec SmartThings.",
-    "body": "Conseil — viser QLED/Neo QLED pour salon lumineux. Vérifier la compatibilité SmartThings et les entrées HDMI 2.1 si jeux.",
+    "summary": "QLED/Neo QLED recommandées pour salon lumineux et intégration SmartThings.",
+    "body": "## En bref\nVisez QLED/Neo QLED; HDMI 2.1 pour le jeu; vérifiez SmartThings.\n\n---\n**Soutien** : certains liens sont affiliés. Merci !",
     "links": [
       { "label": "Amazon", "url": "https://www.amazon.ca/s?k=samsung+smart+tv+qled&tag=TON_TAG" }
     ]
@@ -18,7 +18,7 @@
     "tags": ["thermostat", "énergie", "hvac"],
     "image": "https://source.unsplash.com/1280x720/?smart%20thermostat&sig=thermofr02",
     "summary": "Comparatif compatibilité, capteurs, économies d’énergie.",
-    "body": "Aperçu — Matter, capteurs, économies. Ecobee brille au Canada; Nest fort sur l’écosystème Google.",
+    "body": "## Verdict rapide\nEcobee souvent mieux pour le Canada; Nest top si écosystème Google.\n\n---\n**Soutien** : certains liens sont affiliés. Merci !",
     "links": [
       { "label": "Amazon", "url": "https://www.amazon.ca/s?k=ecobee+smart+thermostat&tag=TON_TAG" },
       { "label": "Amazon", "url": "https://www.amazon.ca/s?k=nest+learning+thermostat&tag=TON_TAG" }
@@ -31,7 +31,7 @@
     "tags": ["montre", "wearable", "santé"],
     "image": "https://source.unsplash.com/1280x720/?smartwatch&sig=montresfr04",
     "summary": "Comparatif 2025 des montres (fitness, santé, notifications).",
-    "body": "**Résumé** — Sélection sport/santé, autonomie, intégration.\n\n1) Apple Watch Series 10\n2) Garmin Forerunner 265\n3) Fitbit Versa 4\n4) Huawei Watch GT 4\n5) VeryFit ID25 (toujours en dernier)",
+    "body": "## Résumé\nSélection santé/fitness.\n\n1) Apple Watch Series 10\n2) Garmin Forerunner 265\n3) Fitbit Versa 4\n4) Huawei Watch GT 4\n5) VeryFit ID25\n\n---\n**Soutien** : certains liens sont affiliés. Merci !",
     "links": [
       { "label": "Amazon", "url": "https://www.amazon.ca/s?k=smartwatch&tag=TON_TAG" },
       { "label": "Amazon", "url": "https://www.amazon.ca/s?k=veryfit+id25&tag=TON_TAG" }
