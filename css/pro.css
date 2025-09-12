@@ -1,0 +1,13 @@
+/* Pro theme add-on */
+:root {
+  --radius: 18px;
+  --shadow: 0 6px 24px rgba(0,0,0,.08);
+  --accent: #3b82f6; /* changeable */
+}
+.header-gradient { background: linear-gradient(135deg, var(--accent), #22c55e); color:#fff; }
+.header-gradient .subtitle a, .header-gradient .subtitle button { background: rgba(255,255,255,.15); border-color: transparent; color:#fff; }
+.card { border: 1px solid rgba(0,0,0,.06); box-shadow: var(--shadow); }
+.card .title { font-weight: 700; letter-spacing:.1px; }
+.badge { display:inline-block; padding:2px 8px; border-radius:999px; border:1px solid #e5e7eb; font-size:12px; margin-left:8px; }
+.dark .badge { border-color:#2a3140; }
+.sticky-toolbar { position: sticky; top: 0; background: var(--bg); padding: 8px 16px; z-index: 5; backdrop-filter: blur(6px); border-bottom:1px solid #eee; }
