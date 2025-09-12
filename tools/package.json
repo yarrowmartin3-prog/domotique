@@ -1,0 +1,14 @@
+{
+  "name": "domotique-refresh-tools",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "node-fetch": "^3.3.2",
+    "rss-parser": "^3.13.0",
+    "turndown": "^7.2.0",
+    "prettier": "^3.3.3"
+  },
+  "scripts": {
+    "refresh": "node refresh_content.mjs"
+  }
+}
