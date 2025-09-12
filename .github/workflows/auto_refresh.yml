@@ -1,0 +1,33 @@
+name: Auto Refresh Content & Style
+on:
+  schedule:
+    - cron: "17 2 * * *"   # tous les jours 02:17 UTC
+  workflow_dispatch: {}
+permissions:
+  contents: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: "20" }
+
+      - name: Install deps
+        run: |
+          cd tools
+          npm ci
+
+      - name: Refresh content (FR/EN)
+        run: |
+          cd tools
+          node refresh_content.mjs
+
+      - name: Commit & Push
+        run: |
+          git config user.name "auto-refresh-bot"
+          git config user.email "bot@example.com"
+          git add posts/*.json
+          git commit -m "chore: auto refresh content" || echo "Nothing to commit"
+          git push
