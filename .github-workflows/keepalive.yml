@@ -1,8 +1,11 @@
 name: KeepAlive
 on:
   schedule:
-    - cron: "0 8 */14 * *"
+    - cron: "0 8 */14 * *" # tous les 14 jours à 08:00 UTC
   workflow_dispatch:
+
+permissions:
+  contents: write # autorise le push dans ce repo
 
 jobs:
   keepalive:
