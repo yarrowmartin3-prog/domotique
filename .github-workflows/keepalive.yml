@@ -1,22 +1,17 @@
 name: KeepAlive
 on:
   schedule:
-    - cron: "0 8 */14 * *" # tous les 14 jours à 08:00 UTC
+    - cron: "0 8 */14 * *"
   workflow_dispatch:
-
-permissions:
-  contents: write # autorise le push dans ce repo
 
 jobs:
   keepalive:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Touch keepalive log and commit
+      - name: Create or update keepalive log
         run: |
           mkdir -p .github
-          echo "keepalive $(date -u)" >> .github/keepalive.log
+          echo "KeepAlive run $(date -u)" >> .github/keepalive.log
           git config --global user.name "NovaBot"
           git config --global user.email "contact@novasuite.ca"
           git add .github/keepalive.log
