@@ -1,0 +1,8 @@
+name: TestWorkflow
+on:
+  workflow_dispatch:
+jobs:
+  echo:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "✅ Actions sont bien activées sur NovaSuiteAI-cloud"
