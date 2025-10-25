@@ -1,19 +1,49 @@
 name: KeepAlive
 on:
   schedule:
-    - cron: "0 8 */14 * *"
+    - cron: "0 8 */14 * *" # toutes les 2 semaines 08:00 UTC
   workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
 
 jobs:
   keepalive:
     runs-on: ubuntu-latest
     steps:
-      - name: Create or update keepalive log
+      - name: Checkout (with token)
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 0
+
+      - name: Configure git (safe directory)
+        run: |
+          git config --global --add safe.directory "$GITHUB_WORKSPACE"
+          git config user.name "NovaBot"
+          git config user.email "contact@novasuite.ca"
+
+      - name: Append keepalive log
         run: |
           mkdir -p .github
           echo "KeepAlive run $(date -u)" >> .github/keepalive.log
-          git config --global user.name "NovaBot"
-          git config --global user.email "contact@novasuite.ca"
+
+      # 1) Tentative de commit/push direct (si la branche n'est pas protégée)
+      - name: Commit and push directly
+        id: direct-push
+        run: |
           git add .github/keepalive.log
-          git commit -m "KeepAlive: $(date -u)" || echo "No changes to commit"
-          git push
+          git commit -m "KeepAlive: $(date -u)" || echo "no changes"
+          git push && echo "pushed=yes" >> $GITHUB_OUTPUT || echo "pushed=no" >> $GITHUB_OUTPUT
+
+      # 2) Si push refusé (branche protégée), on crée une PR automatiquement
+      - name: Create PR if push blocked
+        if: steps.direct-push.outputs.pushed == 'no'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "KeepAlive: $(date -u)"
+          title: "KeepAlive bot — $(date -u)"
+          body: "Commit automatique pour garder le dépôt actif."
+          branch: keepalive-bot
+          delete-branch: true
