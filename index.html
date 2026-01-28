@@ -1,44 +1,68 @@
-<!doctype html><html lang="fr"><head>
-<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>Domotique — Guides & Astuces</title>
-<link rel="stylesheet" href="./css/theme.css"/><link rel="stylesheet" href="./css/pro.css"/>
-</head><body>
-<nav class="topnav">
-  <a class="brand" href="./">🏠 Domotique</a>
-  <div class="spacer"></div>
-  <a class="navlink" href="./">FR</a>
-  <a class="navlink" href="./en/">EN</a>
-</nav>
+ Voici un exemple de structure HTML5 + Tailwind CSS pour la landing page du produit "Nova Domotique". Nous utiliserons une conception sombre, futuriste (Cyberpunk) avec des couleurs et des effets appropriés.
 
-<header class="header-gradient"><div class="main-wrap">
-  <h1>Domotique — Guides & Astuces</h1>
-  <p class="muted">Comparatifs & avis — génération assistée par IA</p>
-  <p class="muted" style="font-size:14px">Transparence : certains liens sont affiliés.</p>
-</div></header>
 
-<section class="toolbar"><div class="main-wrap" style="display:flex;gap:12px">
-  <input id="search" type="search" placeholder="Rechercher…" aria-label="Recherche"/>
-  <select id="tagFilter"><option value="">Tous les tags</option></select>
-</div></section>
+<!DOCTYPE html>
+<html lang="en">
 
-<main class="main-wrap">
-  <section id="feed" class="feed" aria-live="polite"></section>
-  <template id="card-tmpl">
-    <article class="card">
-      <img class="thumb" alt="" loading="lazy" decoding="async"/>
-      <div class="card-body">
-        <h3 class="title"></h3><p class="meta"></p><p class="summary"></p>
-        <div class="links"></div>
-      </div>
-    </article>
-  </template>
-</main>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Domotique</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.16/dist/tailwind.min.css" rel="stylesheet">
+</head>
 
-<footer class="main-wrap footer">
-  <small class="muted">© Domotique — FR</small>
-  <a class="btn-bmc" href="https://www.buymeacoffee.com/yarrowmart9" target="_blank" rel="noopener">☕ Offrez-moi un café</a>
-</footer>
+<body class="bg-[#202124] text-white min-h-screen flex flex-col items-center justify-center">
 
-<script>window.DM_CFG={POSTS_URL:"./posts/posts_fr.json",TEXTS:{noContent:"Aucun contenu.",noResult:"Aucun résultat."}};</script>
-<script src="./js/render_posts.js"></script>
-</body></html>
+    <!-- Header -->
+    <header class="flex items-center justify-between w-full max-w-7xl mx-auto py-8">
+        <div>
+            <img src="/logo.svg" alt="Nova domotique logo" class="h-12">
+        </div>
+        <nav>
+            <!-- Navigation menu -->
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="w-full max-w-7xl mx-auto flex items-center justify-between px-8 py-24">
+        <div class="text-center">
+            <h1 class="text-5xl font-bold mb-6">Transformez votre maison en un espace intelligent</h1>
+            <p class="text-lg">Garantissez la sécurité, l'automatisation et la performance de votre domicile avec Nova Domotique.</p>
+            <button type="button" class="px-8 py-3 mt-6 bg-[#007acc] text-white rounded">COMMANDER</button>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="w-full max-w-7xl mx-auto px-8 py-24 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
+        <!-- Feature 1 -->
+        <div class="bg-[#1f1f1f] p-6 rounded shadow-xl flex items-center justify-center">
+            <i class="text-[#007acc] fas fa-2x fa-lightbulb-on"></i>
+            <h3 class="text-lg font-semibold mt-4">Automatisation</h3>
+            <p class="mt-2">Réglez et contrôlez vos appareils à distance.</p>
+        </div>
+        <!-- Feature 2 -->
+        <div class="bg-[#1f1f1f] p-6 rounded shadow-xl flex items-center justify-center">
+            <i class="text-[#007acc] fas fa-2x fa-lock"></i>
+            <h3 class="text-lg font-semibold mt-4">Sécurité</h3>
+            <p class="mt-2">Gardez votre maison en toute sécurité grâce à des surveillance et des alerts personnalisables.</p>
+        </div>
+        <!-- Feature 3 -->
+        <div class="bg-[#1f1f1f] p-6 rounded shadow-xl flex items-center justify-center">
+            <i class="text-[#007acc] fas fa-2x fa-tachometer-alt"></i>
+            <h3 class="text-lg font-semibold mt-4">Performance</h3>
+            <p class="mt-2">Optimisez l'efficacité énergétique de votre maison et réduisez vos coûts d'électricité.</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full max-w-7xl mx-auto py-8 text-center">
+        <p>&copy; 2023 Nova Sentinel. Tous droits réservés.</p>
+    </footer>
+
+        <div onclick="alert('Lien Stripe/Crypto généré')" style="position:fixed; bottom:20px; right:20px; background:#00ff41; color:black; padding:15px; border-radius:50px; font-weight:bold; cursor:pointer; z-index:999;">
+            💳 ACHETER / INVESTIR
+        </div>
+        </body>
+        
+
+</html>
